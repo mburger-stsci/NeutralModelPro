@@ -1,0 +1,16 @@
+McGrath and Johnson 1989 	// REFERENCE
+Cross Section			// DATATYPE
+Ion-Neutral			// REACTYPE
+1				// NREAC
+S++, O -> S+, O+		// REACTION
+eV				// ENERGY UNITS
+incident energy			// ETYPE
+cm-2 				// CROSS SECTION UNITS
+\begindata
+10 : 2.28e-16
+100 : 3.21e-16
+400 : 3.7e-16
+1.e3 : 4.18e-16
+4.e3 : 3.81e-16
+1.e4 : 3.55e-16
+\enddata

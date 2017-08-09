@@ -1,0 +1,15 @@
+Berezhnoy & Klumov 2008		// REFERENCE
+Rate Coeficient			// DATATYPE
+Photo 				// REACTYPE
+s-1				// RATECOEFUNITS	
+Estimates of photolysis lifetimes for a few metalic oxides // NOTE
+Extract this data to individual structures with 'extract_Berez_data.pro'
+\begindata
+MgO    : MgO, photon -> Mg, O	: 0.0019
+KO     : KO, photon -> K, O	: 0.0019
+FeO    : FeO, photon -> Fe, O	: 0.00076
+CaO    : CaO, photon -> Ca, O	: 0.00076
+SiO    : SiO, photon -> Si, O	: 0.00025
+AlO    : AlO, photon -> Al, O	: 7.6e-5
+TiO    : TiO, photon -> Ti, O	: 5.1e-6
+\enddata

@@ -1,0 +1,2809 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+           "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<meta name="GENERATOR" content="TtH 3.87">
+ <style type="text/css"> div.p { margin-top: 7pt;}</style>
+ <style type="text/css"><!--
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td div.norm {line-height:normal;}
+ span.roman {font-family: serif; font-style: normal; font-weight: normal;} 
+ span.overacc2 {position: relative;  left: .8em; top: -1.2ex;}
+ span.overacc1 {position: relative;  left: .6em; top: -1.2ex;} --></style>
+
+   
+<h1>Contents </h1><a href="#tth_sEc1"
+>1&nbsp; Introduction</a><br />
+<a href="#tth_sEc2"
+>2&nbsp; Setup</a><br />
+<a href="#tth_sEc3"
+>3&nbsp; Input Files</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc3.1"
+>3.1&nbsp; geometry</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc3.2"
+>3.2&nbsp; sticking_info</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc3.3"
+>3.3&nbsp; forces</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc3.4"
+>3.4&nbsp; SpatialDist</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc3.5"
+>3.5&nbsp; SpeedDist</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc3.6"
+>3.6&nbsp; AngularDist</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc3.7"
+>3.7&nbsp; PerturbVel</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc3.8"
+>3.8&nbsp; plasma_info</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc3.9"
+>3.9&nbsp; options</a><br />
+<a href="#tth_sEc4"
+>4&nbsp; Outputs</a><br />
+<a href="#tth_sEc5"
+>5&nbsp; Using the Model</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc5.1"
+>5.1&nbsp; Running the Model</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc5.2"
+>5.2&nbsp; Looking at the Results</a><br />
+<a href="#tth_sEc6"
+>6&nbsp; Physics and Computational Section</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc6.1"
+>6.1&nbsp; Coordinate Systems</a><br />
+<a href="#tth_sEc7"
+>7&nbsp; Appendix A: Directory Structure</a><br />
+<a href="#tth_sEc8"
+>8&nbsp; Appendix B: Inputfile Summary</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc8.1"
+>8.1&nbsp; Geometry</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc8.2"
+>8.2&nbsp; Sticking_Info</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc8.3"
+>8.3&nbsp; Forces</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc8.4"
+>8.4&nbsp; SpatialDist</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc8.5"
+>8.5&nbsp; SpeedDist</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc8.6"
+>8.6&nbsp; AngularDist</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc8.7"
+>8.7&nbsp; PerturbVel</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc8.8"
+>8.8&nbsp; plasma_info</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tth_sEc8.9"
+>8.9&nbsp; options</a><br />
+
+
+<div class="p"><!----></div>
+ <h2><a name="tth_sEc1">
+1</a>&nbsp;&nbsp;Introduction</h2>
+
+<div class="p"><!----></div>
+This document provides a guide to using Matthew Burger's neutral cloud model.
+You can contact me at 
+<a href="mailto:Matthew.H.Burger@nasa.gov">Matthew.H.Burger@nasa.gov</a>. 
+
+<div class="p"><!----></div>
+The document is organized as follows:
+
+<ol type="1">
+<li> Setting things up: how to get the model running on your computer
+<div class="p"><!----></div>
+</li>
+
+<li> Input files: Running with the parameters you want
+<div class="p"><!----></div>
+</li>
+
+<li> What the model does: I try to explain the physical and computational 
+processes in more detail and provide examples to prove it works the way it 
+should.
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+Things to add:
+
+<ol type="1">
+<li> Version array has been added to the code. Need to add description.
+<div class="p"><!----></div>
+</li>
+
+<li> Need to add Earth's seasonal effects.
+<div class="p"><!----></div>
+</li>
+
+<li> Made change to accommodation factor definition. Need to add to manual.
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+ <h2><a name="tth_sEc2">
+2</a>&nbsp;&nbsp;Setup</h2>
+
+<div class="p"><!----></div>
+All of the files used for the model are listed in Appendix A. The IDL Astronomy User's
+Library is also needed. This can be downloaded from
+<a href="http://idlastro.gsfc.nasa.gov/homepage.html">http://idlastro.gsfc.nasa.gov/homepage.html</a>.
+
+<div class="p"><!----></div>
+In your IDL startup file, add the line: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tt>path/@physical_constants_2.0</tt> <br />
+where path is the path to the file. This creates an IDL system variable called
+<i>!const</i> which contains useful physical constants used by the model 
+(m<sub>p</sub>, m<sub>e</sub>, k<sub>b</sub>, etc.). 
+
+<div class="p"><!----></div>
+I would also recommend adding the line: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tt>plotsym, 0, /fill</tt> <br />
+to your IDL startup file. This sets the user defined plot symbol (psym=8) to 
+be a filled circle. I use this often, and if there are any plot commands that 
+in my programs, they probably assume this is set.
+
+<div class="p"><!----></div>
+There are probably some paths that are hardwired that will need to be changed. 
+I'll note them as I figure them out.
+
+<div class="p"><!----></div>
+ <h2><a name="tth_sEc3">
+3</a>&nbsp;&nbsp;Input Files</h2>
+
+<div class="p"><!----></div>
+The input file contains all the parameters needed to run the model. This should 
+be all you need to change to get the output you are looking for. The file 
+contains a series of lines in the format: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>structure.field</i> = <i>value</i>  <br />
+String values should not have quote marks around them. Numerical values cannot 
+be mathematical operations. For numerical values, it is not necessary to 
+specify double precision. All the inputs are case insensitive. I use 
+capitalization to make things clearer for me, but it is not necessary.
+
+<div class="p"><!----></div>
+The inputs and outputs are contained in a series of structures. The input 
+structures are:
+
+<ol type="1">
+<li> geometry
+<div class="p"><!----></div>
+</li>
+
+<li> sticking_info
+<div class="p"><!----></div>
+</li>
+
+<li> forces
+<div class="p"><!----></div>
+</li>
+
+<li> SpatialDist
+<div class="p"><!----></div>
+</li>
+
+<li> SpeedDist
+<div class="p"><!----></div>
+</li>
+
+<li> AngularDist
+<div class="p"><!----></div>
+</li>
+
+<li> PerturbVel
+<div class="p"><!----></div>
+</li>
+
+<li> plasma_info
+<div class="p"><!----></div>
+</li>
+
+<li> options
+<div class="p"><!----></div>
+</li>
+</ol>
+This may seen like a lot of structures, but I've found that this allows a large 
+number of options to be set while still keeping things organized. In the 
+sections that follow, I descirbe each structure and give the possible options. 
+Fields in red are optional. If a required field is not included in the input 
+file, the run will crash. Appendix B summarizes the options.
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc3.1">
+3.1</a>&nbsp;&nbsp;geometry</h3>
+
+<div class="p"><!----></div>
+The format of the geometry structure depends on the central object in the 
+system. 
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> Mercury
+  
+<ol type="a">
+<li> planet = Mercury
+<div class="p"><!----></div>
+</li>
+
+<li> taa = true anomaly angle in radians
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">include</font> = 1/0 depending on whether to include Mercury's 
+  gravity as a force. (Default = 1)
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> Earth
+  
+<ol type="a">
+<li> planet = Earth
+<div class="p"><!----></div>
+</li>
+
+<li> StartPoint = Earth or Moon
+<div class="p"><!----></div>
+</li>
+
+<li> phi = final heliocentric orbital position for the Earth and Moon. The Earth's
+  position is currently ignored, although I need to add in seasonal effects. This line
+  needs to be included either 1 or 2 times. If only included once, then it is assumed to
+  be for the moon.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">include</font> = 1/0 depending on whether to include the gravity from the
+  Earth and moon. If present, must be included twice. Default = 1 for each object.
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> Jupiter
+  
+<ol type="a">
+<li> planet = Jupiter
+<div class="p"><!----></div>
+</li>
+
+<li> StartPoint = Jupiter or one of its moons
+<div class="p"><!----></div>
+</li>
+
+<li> CML = central meridian longitude in radians
+<div class="p"><!----></div>
+</li>
+
+<li> phi = final heliocentric orbital position for the planet and each moon. 
+  The line <tt>geometry.phi = xxx</tt> must be included 5 times (one time each 
+  for Jupiter, Io, Europa, Ganymede, and Callisto, in order). The orbital 
+  position for Jupiter is always 0, so this line doesn't matter, although it 
+  must be included.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">include</font> = 1/0 depending on whether to include the gravity 
+  from Jupiter and each moon as a force. This line must be included 5 times. 
+  Default = 1 for all objects.
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> Saturn
+  
+<ol type="a">
+<li> planet = Saturn
+<div class="p"><!----></div>
+</li>
+
+<li> StartPoint = Saturn or one of its moons
+<div class="p"><!----></div>
+</li>
+
+<li> phi = final heliocentric position for the planet and each moon. This 
+  line must be included 10 times (one time each for Saturn, Mimas, Enceladus, 
+  Tethys, Dione, Rhea, Titan, Hyperion, Iapetus, and Phoebe, in order).
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">include</font> = 1/0 depending on whether to include gravity from 
+  each object. This line must be included 10 times. Default = 1 for each object.
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+Regarding the <i>include</i> option: In general it is only necessary to 
+include the gravity from the central object and the starting satellite. 
+Including more satellites has little effect on particle trajectories over short 
+time scales and will slow things down since more computations are necessary.
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc3.2">
+3.2</a>&nbsp;&nbsp;sticking_info</h3>
+
+<div class="p"><!----></div>
+This structure controls what happens when when a packet hits the surface. 
+Currently the sticking coefficient is a constant, but I will add more 
+complicated functions. If the sticking coefficeint equals 1, then the entire 
+packet sticks to the surface and the integration is complete. If it is less 
+than 1, the additional fields in <i>sticking_info</i> specify how the packet 
+is reemitted from the surface.
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> StickCoef = a number between 0 and 1 to specify the fraction of the 
+packet which sticks to the surface.
+<div class="p"><!----></div>
+</li>
+
+<li> If StickCoef = 1, then nothing else is required.
+<div class="p"><!----></div>
+</li>
+
+<li> If StickCoef  &lt; 1, then the following options are possible:
+  
+<ol type="a">
+<li> Thermal accommodation to the surface temperature. The packet is reemitted in a
+  random direction at a speed between the incident speed and random speed based on the
+  local surface temperature. The new velocity is v<sub>1</sub> = a v&#8242;+ (1&#8722;a)v<sub>0</sub>, where v&#8242; is
+  chosen from the Maxwellian disrtibution function f<sub>M</sub>(v,T).
+    
+<ul>
+<li> emitfn = Maxwellian
+<div class="p"><!----></div>
+</li>
+
+<li> Tsurf = surface temperature (K). If Tsurf=0, then the local surface
+    temperature is computed as a function of solar zenith angle (only set up for
+    Mercury). Otherwise, the surface temperature is assumed constant.
+<div class="p"><!----></div>
+</li>
+
+<li> accom_factor = a number between 0 and 1 indicating the amount of thermal
+    accommodation (1 = fully accommodated).
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+
+<li> Elastic scattering. The packet is reemitted in a random direction at 
+  the same speed it hit the surface with. This is equivalent to setting emitfn to
+  Maxwellian and accom_factor = 0 (no accommodation).
+    
+<ul>
+<li> emitfn = elastic scattering
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc3.3">
+3.3</a>&nbsp;&nbsp;forces</h3>
+
+<div class="p"><!----></div>
+This structure controls which forces acting on the packets are computed. The 
+possible forces are gravity, radiation pressure, and the Lorentz force. The 
+Lorentz force doesn't work right now, and in any case is irrelevant for 
+neutrals. Any force not explicitly listed in the input file is turned off.
+
+<div class="p"><!----></div>
+Right now I have g-values for C, Ca, Ca<sup>+</sup>, H, He, K, Mg, Mg<sup>+</sup>, Na, OH, O, 
+and S. If radiation pressure is set for any other species, then the g-value is 
+assumed to be 0.
+
+<div class="p"><!----></div>
+
+<ul>
+<li> <font color="#FF0000">gravity</font> = 1/0 to turn gravity on/off (default = 0)
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">radpres</font> = 1/0 to turn radiation pressure on/off (default = 0)
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">lorentz</font> = 1/0 to turn the Lorentz force on/off (default = 0)
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc3.4">
+3.4</a>&nbsp;&nbsp;SpatialDist</h3>
+
+<div class="p"><!----></div>
+This determines the initial spatial distribution of the packets. Currently, the 
+options are: surface, torus, exosphere, and SO<sub>2</sub> exosphere. The required 
+fields for each of these options are different.
+
+<div class="p"><!----></div>
+There is an option called <i>random_even</i> included in each of these
+distributions which used to toggle between randomly choosing packets with the
+specified parameters or evenly distributing them throughout the region. The
+flag is still there, but only the random option works. It turns out that evenly
+distributing packets over a sphere is difficult and not really very useful.
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> Surface distribution. This distributes packets randomly over the surface
+of a sphere. There are two ways to specify how packets are distributed: by
+specifying a longitude/latitude range, or by supplying a probibility
+distribution function map.
+
+<div class="p"><!----></div>
+To specify a longitude and latitude range, the parameters are:
+  
+<ul>
+<li> use_map = 0
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">exobase</font> = radius of the sphere in units of the starting 
+  point (satellite or planet) radius. Default = 1, for starting at the
+  surface. Exobase  &lt; 1 will cause problems.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">longitude0</font> = lower bound on lonigutde [radians]. Default =
+  0.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">longitude1</font> = upper bound on longitude [radians]. Default =
+  6.2831853.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">latitude0</font> = lower bound on latitude [radians]. Default = 
+  -1.5707963
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">latitude1</font> = upper bound on latitude [radians]. Default = 
+  1.5707963
+<div class="p"><!----></div>
+</li>
+</ul>
+The latitude range is &#8722;&#960;/2 to &#960;/2. The longitude range is 0 to 2&#960;.
+To choose a sub-region that spans the 0 longitude,  set longitude0  &gt; 
+longitude1. (Setting a negative value will most likely not work right - I
+haven't checked.)
+
+<div class="p"><!----></div>
+The probability distribution functions for longitude (&#955;) and 
+latitude (&#956;) are determined by:
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>&#955;</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+constant, &#955;<sub>0</sub>  &#8804; &#955; &#8804; &#955;<sub>1</sub> </td></tr></table></td><td width="50%"></td><td width="1" align="right">(1)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>&#956;</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table><tr><td nowrap="nowrap" align="right" colspan="1">cos(&#956;), &#956;<sub>0</sub>  &#8804; &#956; &#8804; &#956;<sub>1</sub> </td></tr></table></td><td width="50%"></td><td width="1" align="right">(2)</td></tr></table>
+</td></tr></table>
+
+
+
+<div class="p"><!----></div>
+I need to verify that this works according
+to the coordinate systems defined in Section&nbsp;<a href="#sec:coordsystems">6.1</a> below,
+which are centered on the subsolar point, in the case of planets, and the
+sub-planet point in the case of satellites. (Because the planetary coordinate
+systems are right-handed and the satellite systems are left-handed, I expect
+that there are currently some mistakes).
+
+<div class="p"><!----></div>
+If you would like to specify a more complicated surface distribution, you need
+to provide a mapfile in a format which I will describe later.
+<div class="p"><!----></div>
+</li>
+
+<li> Torus. This begins packets in a longitudinally symmetric torus in the
+equatorial plane of the central planet. The locations of packets are determined
+by:
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+x </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ = </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+(r<sub>0</sub> + a cos&#952;) cos&#981;</td></tr></table></td><td width="50%"></td><td width="1" align="right">(3)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+y </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ = </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+(r<sub>0</sub> + a cos&#952;) sin&#981;</td></tr></table></td><td width="50%"></td><td width="1" align="right">(4)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+z </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ = </td></tr></table></td><td nowrap="nowrap" align="left">
+<table><tr><td nowrap="nowrap" align="right" colspan="1">b sin&#952;</td></tr></table></td><td width="50%"></td><td width="1" align="right">(5)</td></tr></table>
+</td></tr></table>
+
+
+where a, b, &#952;, and &#981; are random variables in the ranges:
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+0 </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8804; a  &#8804; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+r<sub>1</sub> </td></tr></table></td><td width="50%"></td><td width="1" align="right">(6)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+0 </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8804; b  &#8804; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+r<sub>2</sub> </td></tr></table></td><td width="50%"></td><td width="1" align="right">(7)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+0 </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8804; &#952; &#8804; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+2&#960;</td></tr></table></td><td width="50%"></td><td width="1" align="right">(8)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+0 </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8804; &#981; &#8804; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+2&#960;</td></tr></table></td><td width="50%"></td><td width="1" align="right">(9)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table><tr><td nowrap="nowrap" align="right" colspan="1"></td></tr></table></td><td width="50%"></td><td width="1" align="right">(10)</td></tr></table>
+</td></tr></table>
+
+
+This produces a torus with a major axis r<sub>0</sub>, and minor axes r<sub>1</sub> in the
+equatorial plane and r<sub>2</sub> out of the equatorial plane. 
+
+<div class="p"><!----></div>
+Right now this can only create a torus around the central planet, although we
+may want to change that later to simulate production from the Rhea ring, for
+example.
+
+<div class="p"><!----></div>
+Parameters:
+  
+<ul>
+<li> radius0 = torus major axis, r<sub>0</sub> [planetary radii]
+<div class="p"><!----></div>
+</li>
+
+<li> radius1 = torus minor axis, r<sub>1</sub> [planetary radii]
+<div class="p"><!----></div>
+</li>
+
+<li> radius2 = torus minor axis, r<sub>2</sub> [planetary radii]
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+Add some figures showing that this works.
+<div class="p"><!----></div>
+</li>
+
+<li> Exosphere distribution. This starts packets in a spherically symmetric
+exosphere centered on the starting planet or moon. The exosphere can drop off
+either exponentially or as a powerlaw. The radial components of the powerlaw
+and exponential exospheres have the form: 
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>r</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+r<sup>b</sup>; powerlaw </td></tr></table></td><td width="50%"></td><td width="1" align="right">(11)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>r</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table><tr><td nowrap="nowrap" align="right" colspan="1">e<sup>(</sup>&#8722;(r&#8722;1)/b; exponential </td></tr></table></td><td width="50%"></td><td width="1" align="right">(12)</td></tr></table>
+</td></tr></table>
+
+
+For a powerlaw exosphere, b is the powerlaw index. For an exponential
+exosphere, b is the scale height. The angular components are isotropically
+distributed:
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>&#952;</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+cos&#952;</td></tr></table></td><td width="50%"></td><td width="1" align="right">(13)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>&#981;</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table><tr><td nowrap="nowrap" align="right" colspan="1">constant</td></tr></table></td><td width="50%"></td><td width="1" align="right">(14)</td></tr></table>
+</td></tr></table>
+
+
+To simulate production of atomic species by photodissociation of a molecular
+exosphere, there is an option (block_shadow) to only start packets in sunlight.
+
+<div class="p"><!----></div>
+Parameters:
+  
+<ul>
+<li> exotype = exponential or powerlaw
+<div class="p"><!----></div>
+</li>
+
+<li> b = scale height [object radii] for the exponential or powerlaw index.
+  The powerlaw index should be  &lt; 0.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">rmax</font> = cutoff distance for exosphere [object radii]. 
+  Default = 10.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">block_shadow</font> = 0/1 to allow/block packets to start in the
+  geometric shadow. Default = 0.
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+
+<li> SO<sub>2</sub> exosphere. This was sent to me by Vincent Dols to simulate
+production of O in Io's SO<sub>2</sub> exosphere.
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>&#981;</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+e<sup>&#8722;(&#124;&#981;&#124;&#8722;&#960;)<sup>2</sup>/1.07<sup>2</sup></sup> </td></tr></table></td><td width="50%"></td><td width="1" align="right">(15)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>r</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+&#8722;474.8 + 148.7r + 200.7 r<sup>2</sup> &times; </td><td nowrap="nowrap" align="center">
+0.09
+<div class="hrcomp"><hr noshade="noshade" size="1"/></div>(r<sub>peak</sub>(&#981;)&#8722;r<sup>2</sup>)<sup>2</sup><br /></td><td nowrap="nowrap" align="center">
++ 0.09<sup>2</sup> </td></tr></table></td><td width="50%"></td><td width="1" align="right">(16)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+r<sub>peak</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ = </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+1.42 &times;</td><td align="left" class="cl">&#x23A1;<br />&#x23A3;
+</td><td nowrap="nowrap" align="center">
+1 + 0.05 </td><td align="left" class="cl">&#x239B;<br />&#x239D;
+</td><td nowrap="nowrap" align="center">
+&#960; &#8722;&#124;&#981;&#124;
+<div class="hrcomp"><hr noshade="noshade" size="1"/></div>&#960;/4<br /></td><td align="left" class="cl">&#x239E;<br />&#x23A0;
+</td><td nowrap="nowrap" align="center">
+<small>2</small><!--sup
+--><br /><br />
+<small></small>&nbsp;<br /></td><td align="left" class="cl">&#x23A4;<br />&#x23A6;
+</td><td nowrap="nowrap" align="center">
+</td></tr></table></td><td width="50%"></td><td width="1" align="right">(17)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>&#952;</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table><tr><td nowrap="nowrap" align="right" colspan="1">cos&#952;</td></tr></table></td><td width="50%"></td><td width="1" align="right">(18)</td></tr></table>
+</td></tr></table>
+
+
+
+<div class="p"><!----></div>
+There are no parameters to set. 
+
+<div class="p"><!----></div>
+Need to add a figure showing what this looks like.
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc3.5">
+3.5</a>&nbsp;&nbsp;SpeedDist</h3>
+
+<div class="p"><!----></div>
+Options for the SpeedDist.type are: Gaussian, trigaussian, sputtering,
+Maxwellian (thermal), flat (constant), circular orbits, dolsfunction.
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> Gauusian distribution. The Gaussian speed distribution has the form:
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table align="center" cellspacing="0"  cellpadding="2"><tr><td nowrap="nowrap" align="center">
+f<sub>v</sub>(v)  &#8733; e<sup>&#8722;(v&#8722;v<sub>prob</sub>)<sup>2</sup>/2/&#963;<sup>2</sup></sup></td></tr></table>
+</td><td width="1%">(19)</td></tr></table>
+
+
+
+<div class="p"><!----></div>
+Parameters are:
+  
+<ul>
+<li> vprob = most probable velocity [km/s]
+<div class="p"><!----></div>
+</li>
+
+<li> sigma = Gaussian width [km/s]
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+
+<li> Tri-gaussian distribution. This allows you to set a different Gaussian
+speed distribution in the x, y, and z directions. This needs to be tested. I am
+not sure what coordinate system is used.
+
+<div class="p"><!----></div>
+Parameters are:
+  
+<ul>
+<li> vxprob = most probable speed along x axis [km/s]
+<div class="p"><!----></div>
+</li>
+
+<li> vxsigma = Gaussian width in x direction [km/s]
+<div class="p"><!----></div>
+</li>
+
+<li> vyprob = most probable speed along y axis [km/s]
+<div class="p"><!----></div>
+</li>
+
+<li> vysigma = Gaussian width in y direction [km/s]
+<div class="p"><!----></div>
+</li>
+
+<li> vzprob = most probable speed along z axis [km/s]
+<div class="p"><!----></div>
+</li>
+
+<li> vzsigma = Gaussian width in z direction [km/s]
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+
+<li> Sputtering speed distribution. This uses a generic sputtering
+distribution in the form:
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>v</sub>(v) </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+</td><td nowrap="nowrap" align="center">
+v<sup>2&#946;+1</sup>
+<div class="hrcomp"><hr noshade="noshade" size="1"/></div>(v<sup>2</sup> + v<sub>b</sub><sup>2</sup>)<sup>&#945;</sup> <br /></td><td nowrap="nowrap" align="center">
+</td></tr></table></td><td width="50%"></td><td width="1" align="right">(20)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+v<sub>b</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ = </td></tr></table></td><td nowrap="nowrap" align="left">
+<table><tr><td nowrap="nowrap" align="right" colspan="1"></td><td align="left" class="cl">&#x239B;<br />&#x239D;
+</td><td nowrap="nowrap" align="center">
+2U
+<div class="hrcomp"><hr noshade="noshade" size="1"/></div>m<sub>atom</sub><br /></td><td align="left" class="cl">&#x239E;<br />&#x23A0;
+</td><td nowrap="nowrap" align="center">
+<small>1/2</small><!--sup
+--><br /><br />
+<small></small>&nbsp;<br /></td><td nowrap="nowrap" align="center">
+</td></tr></table></td><td width="50%"></td><td width="1" align="right">(21)</td></tr></table>
+</td></tr></table>
+
+
+
+<div class="p"><!----></div>
+This is equivalent to an energy distribution in the form:
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table align="center" cellspacing="0"  cellpadding="2"><tr><td nowrap="nowrap" align="center">
+f<sub>E</sub>(E)  &#8733; </td><td nowrap="nowrap" align="center">
+E<sup>&#946;</sup> 
+<div class="hrcomp"><hr noshade="noshade" size="1"/></div>(E + U)<sup>&#945;</sup> <br /></td><td nowrap="nowrap" align="center">
+</td></tr></table>
+</td><td width="1%">(22)</td></tr></table>
+
+
+
+<div class="p"><!----></div>
+Required parameters are:
+
+<ul>
+<li> U = binding energy [eV]
+<div class="p"><!----></div>
+</li>
+
+<li> alpha = &#945; parameter
+<div class="p"><!----></div>
+</li>
+
+<li> beta = &#946; parameter
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+Typical values for several species are given in Table&nbsp;<a href="#table:sputparam">1</a>.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+<a name="tth_tAb1">
+</a> <center>Table 1: Sputtering parameters.</center> 
+<center>
+
+<table>
+<tr><td align="center">Species </td><td align="center">U (eV) </td><td align="center">&#945; </td><td align="center">&#946; </td></tr>
+<tr><td align="center">H<sub>2</sub>O from ice </td><td align="center">0.055 </td><td align="center">3 </td><td align="center">1 </td></tr>
+<tr><td align="center">O<sub>2</sub> from ice </td><td align="center">0.015 </td><td align="center">2 </td><td align="center">0 </td></tr>
+<tr><td align="center">Na from rock </td><td align="center">2 </td><td align="center">3 </td><td align="center">1 </td></tr></table>
+ </center>
+<a name="table:sputparam">
+</a>
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+</li>
+
+<li> Maxwell-Boltzmann distribution. The Maxwellian distribution has the form:
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>v</sub>(v) </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+v<sup>2</sup> e<sup>&#8722;v<sup>2</sup>/v<sub>th</sub><sup>2</sup></sup> </td></tr></table></td><td width="50%"></td><td width="1" align="right">(23)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+v<sub>th</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ = </td></tr></table></td><td nowrap="nowrap" align="left">
+<table><tr><td nowrap="nowrap" align="right" colspan="1"></td><td align="left" class="cl">&#x239B;<br />&#x239D;
+</td><td nowrap="nowrap" align="center">
+2k<sub>b</sub> T<sub>surf</sub>
+<div class="hrcomp"><hr noshade="noshade" size="1"/></div>m<sub>atom</sub><br /></td><td align="left" class="cl">&#x239E;<br />&#x23A0;
+</td><td nowrap="nowrap" align="center">
+<small>1/2</small><!--sup
+--><br /><br />
+<small></small>&nbsp;<br /></td><td nowrap="nowrap" align="center">
+</td></tr></table></td><td width="50%"></td><td width="1" align="right">(24)</td></tr></table>
+</td></tr></table>
+
+
+
+<div class="p"><!----></div>
+The only field used is the temperature. If the temperature is set to a number
+greater than 0,
+then the surface is assumed to be constant at that temperature (in K). If 
+temperature
+is set to zero, a model for the local surface temperature as a function of
+solar zenith angle is used.
+
+<div class="p"><!----></div>
+Currently, the only body with a surface temperature model is Mercury. The
+temperature is as determined by []. On the dayside (SZA  &#8804; &#960;/2: 
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+T<sub>s</sub>(SZA) </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ = </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+T<sub>0</sub> + T<sub>1</sub> &times;cos<sup>1/4</sup> SZA </td></tr></table></td><td width="50%"></td><td width="1" align="right">(25)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+T<sub>0</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ = </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+100 </td></tr></table></td><td width="50%"></td><td width="1" align="right">(26)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+T<sub>1</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ = </td></tr></table></td><td nowrap="nowrap" align="left">
+<table><tr><td nowrap="nowrap" align="right" colspan="1">600 + 125 &times;(cos(TAA)&#8722;1)/2.</td></tr></table></td><td width="50%"></td><td width="1" align="right">(27)</td></tr></table>
+</td></tr></table>
+
+
+On the nightside, T<sub>s</sub> = 100 K.
+I'm not exactly sure where the equation for T<sub>1</sub> comes from. It is probably
+chosen that that T<sub>1</sub> varies between 475 K and 600 K, and the temperature at
+the subsolar point varies between 575 K and 700 K, as suggested by
+[] and []. I think this formulation will need to
+be improved.
+<div class="p"><!----></div>
+</li>
+
+<li> Flat speed distribution. The distribution function is given by:
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f(v) </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ = </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+constant, v<sub>prob</sub>&#8722;&#8710;v  &#8804; v  &#8804; v<sub>prob</sub>+&#8710;v </td></tr></table></td><td width="50%"></td><td width="1" align="right">(28)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f(v) </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ = </td></tr></table></td><td nowrap="nowrap" align="left">
+<table><tr><td nowrap="nowrap" align="right" colspan="1">0, otherwise</td></tr></table></td><td width="50%"></td><td width="1" align="right">(29)</td></tr></table>
+</td></tr></table>
+
+
+
+<div class="p"><!----></div>
+Parameters:
+  
+<ul>
+<li> vprob = center of the distribution [km/s]
+<div class="p"><!----></div>
+</li>
+
+<li> delv = half-width of the distribution [km/s]
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+
+<li> Circular orbits. This starts the packets in circular, Keplarian orbits
+around the central planet. It will not start packets in orbits around
+satellites, although it would not be hard to add this feature if desired. The
+circular orbits distribution was designed to be used with
+the torus spatial distribution. The initial direction of packets is in the
+<span class="overacc1">&#8743;</span>z &times;<span class="overacc1">&#8743;</span>r direction, where <span class="overacc1">&#8743;</span>z points north and <span class="overacc1">&#8743;</span>r
+points radially from the origin to the packet. There are currently no settable
+options for this speed (velocity, really) distribution.
+
+<div class="p"><!----></div>
+The purturb_vel structure works well with circular orbits to add small
+velocity perturbations to stable orbits.
+<div class="p"><!----></div>
+</li>
+
+<li> Dolsfunction. This is a speed distribution for the production O and S
+from SO<sub>2</sub> dissociation. It was provided to me from Vincent Dols, based on
+measurements by []. 
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>v</sub>(v) </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+v &times;e<sup>&#8722;(E&#8722;d<sub>0</sub>)<sup>2</sup>/d<sub>1</sub><sup>2</sup></sup> </td></tr></table></td><td width="50%"></td><td width="1" align="right">(30)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+E </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ = </td></tr></table></td><td nowrap="nowrap" align="left">
+<table><tr><td nowrap="nowrap" align="right" colspan="1"></td><td nowrap="nowrap" align="center">
+1
+<div class="hrcomp"><hr noshade="noshade" size="1"/></div>2<br /></td><td nowrap="nowrap" align="center">
+m<sub>atom</sub> v<sup>2</sup> </td></tr></table></td><td width="50%"></td><td width="1" align="right">(31)</td></tr></table>
+</td></tr></table>
+
+
+Looking at this now, I'm not 100% sure I did this right. We will need to
+confirm that it works.
+
+<div class="p"><!----></div>
+Parameters:
+  
+<ul>
+<li> dols0 = d<sub>0</sub> parameter.
+<div class="p"><!----></div>
+</li>
+
+<li> dols1 = d<sub>1</sub> parameter.
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc3.6">
+3.6</a>&nbsp;&nbsp;AngularDist</h3>
+
+<div class="p"><!----></div>
+The possible angular distributions are radial, isotropic, and costheta. It is
+also possible to turn this off if the structure is not needed.
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> No angular distribution. The circular orbits speed distribution does not
+currently allow the user to specify an angular distribution. If one is set, it
+will be ignored.
+<div class="p"><!----></div>
+</li>
+
+<li> Radial distribution. Packets are sent out radially from the center of the
+starting object.
+<div class="p"><!----></div>
+</li>
+
+<li> Isotropic. Packets are sent out isotropically into a sphere or, if using
+the surface spatial distribution, the outward hemisphere.
+
+<div class="p"><!----></div>
+The probability distribution functions for the azimuth angle &#981; and the
+altitude angle &#952; are determined by:
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>&#981;</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+constant, 0  &#8804; &#981; &lt;  2&#960;</td></tr></table></td><td width="50%"></td><td width="1" align="right">(32)</td></tr>
+ <tr><td width="50%"></td><td nowrap="nowrap" align="right" colspan="1"><table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+f<sub>&#952;</sub> </td></tr></table></td><td nowrap="nowrap" align="left">
+<table border="0" cellspacing="0" cellpadding="2"><tr><td nowrap="nowrap" align="left">
+ &#8733; </td></tr></table></td><td nowrap="nowrap" align="left">
+<table><tr><td nowrap="nowrap" align="right" colspan="1">cos &#952;, (&#8722;&#960;/2,0)  &#8804; &#952; &#8804; &#960;/2</td></tr></table></td><td width="50%"></td><td width="1" align="right">(33)</td></tr></table>
+</td></tr></table>
+
+
+
+<div class="p"><!----></div>
+Parameters:
+  
+<ul>
+<li> <font color="#FF0000">altitude0</font> = lower limit on the altitude angle [radians].
+  Default = 0 for SpatialDist.type = surface; &#8722;&#960;/2 otherwise.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">altitude1</font> = upper limit on the altitude angle [radians].
+  Default = &#960;/2
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">azimuth0</font> = lower limit on the azimuth range [radians].
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">azimuth1</font> = upper limit on the azimuth range [radians].
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+Notes: 
+  
+<ol type="a">
+<li> The altitude is defined relative to the vector from the center of the
+  starting object to the packet. Altitude = 90<sup>&#176;</sup>&nbsp;points radially outward.
+  Altitude = 0<sup>&#176;</sup>&nbsp;is tangent to the object surface at that point.
+<div class="p"><!----></div>
+</li>
+
+<li> The azimuth should be defined such that azimuth = 0<sup>&#176;</sup>&nbsp;is east and
+  azimuth = 90<sup>&#176;</sup>&nbsp;is north, but I have not confirmed that I have this
+  correct.
+<div class="p"><!----></div>
+</li>
+
+<li> The azimuth should be in the range (0,2&#960;). To choose a subrange
+  that includes 0, set azimuth0  &gt;  azimuth1.
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> costheta angular distribution. Sets the altitude angle distribution
+propotional to cos<sup>n</sup>(&#968;)=cos<sup>n</sup>(&#960;/2&#8722;&#952;) where &#952; is the 
+altitude
+angle (measured relative to the surface tangent) and &#968; is the zentih angle
+(measured relative to the surface normal). The altitude distribution is
+determined by:
+
+<br clear="all" /><table border="0" width="95%"><tr><td>
+<table align="center" cellspacing="0"  cellpadding="2"><tr><td nowrap="nowrap" align="center">
+f<sub>&#952;</sub>  &#8733; sin<sup>n</sup>(&#952;)</td></tr></table>
+</td><td width="1%">(34)</td></tr></table>
+
+
+One could argue that this is not a good distribution because it does not take
+into account the decrease in the size of a d&#981; bin near the poles, and that
+there should be an additional factor of cos&#952; in there. I have left
+this out because I wanted a function that is peaked normal to the surface. If
+I've done this wrong, I can change it (actually, it would just require
+uncommenting one line and commenting another).
+
+<div class="p"><!----></div>
+Parameters:
+  
+<ul>
+<li> <font color="#FF0000">n</font> = exponent on the distribution. Default = 1.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">altitude0</font> = lower limit on the altitude angle [radians].
+  Default = 0 for SpatialDist.type = surface; &#8722;&#960;/2 otherwise.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">altitude1</font> = upper limit on the altitude angle [radians].
+  Default = &#960;/2
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">azimuth0</font> = lower limit on the azimuth range [radians].
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">azimuth1</font> = upper limit on the azimuth range [radians].
+<div class="p"><!----></div>
+</li>
+</ul>
+See the notes above on the definitions of altitude and azimuth.
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc3.7">
+3.7</a>&nbsp;&nbsp;PerturbVel</h3>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc3.8">
+3.8</a>&nbsp;&nbsp;plasma_info</h3>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc3.9">
+3.9</a>&nbsp;&nbsp;options</h3>
+
+<div class="p"><!----></div>
+The options structure contains various settings and parameters that don't fit
+anywhere else. 
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> <font color="#FF0000">packets</font> = number of packets to run. Default = 30000. In
+general, I limit the number of packets per iteration to 30000. I will run tests
+to see how necessary this is. When running in streamline mode, you shouldn't
+run more than 1000 or so packets at a time.
+<div class="p"><!----></div>
+</li>
+
+<li> endtime = total integration period [seconds]. This should be set for at
+least 3 times the expected e-folding lifetime to make sure a steady state is
+reached.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">resolution</font> = the model precision. Default = 10<sup>&#8722;6</sup>.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">motion</font> = 1/0 to turn on/off satellite motion. Default = 1.
+This is mainly used for testing purposes. It has no effect for Mercury.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">lifetime</font> = Fixed, constant lifetime for the packets
+[seconds]. To have the model determine the lifetime based on calculated
+loss rates (using electron-impact, photo, and charge exchage processes), set
+lifetime = 0. Default = 0.
+<div class="p"><!----></div>
+</li>
+
+<li> atom = Species to run.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">at_once</font> = 1/0 to eject all the packets at once/random
+times. Default = 0 in the normal model and 1 in the streamline mode.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">fullsystem</font> = 1/0 to turn on/off full system mode. If turned
+on, the positions of packets are tracked regardless of how far from the
+starting points they go. If off, then packets which go too far from the
+starting point are no longer tracked. If only modeling the exosphere, you may
+not care about the packets that escape. If modeling a neutral torus, you will
+want to model the full system. Default = 1 for Jupiter and Saturn and 0 for
+Mercury.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">outeredge</font> = Distance from the starting point to track packets
+[object radii]. This only has an effect if options.fullsystem=0. Default = 20.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">trackloss</font> = 1/0 to turn on/off loss tracking.
+If set, the output will include: 
+  
+<ul>
+<li> The fraction of each packet that was ionized or dissociated.
+<div class="p"><!----></div>
+</li>
+
+<li> The fraction of each packet that stuck to the surface of each object
+  in the system.
+<div class="p"><!----></div>
+</li>
+
+<li> The fraction of each packet that hit Saturn's rings.
+<div class="p"><!----></div>
+</li>
+
+<li> The fraction of each packet that escaped from the exosphere (if
+  options.fullsystem=0)
+<div class="p"><!----></div>
+</li>
+
+<li> The spatial distribution of surface adsorption on each object in the
+  system.
+<div class="p"><!----></div>
+</li>
+</ul>
+Turning this on will increase the runtime, although I have not tested how much.
+This feature has not been well tested and may still have some bugs. Default =
+0.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">datapath</font> = path to the atomic data used to determine loss
+rates, emission rates, and g-values. Default = path on my computer.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">modelpath</font> = path to the model code. Default = path on my
+computer.
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+ <h2><a name="tth_sEc4">
+4</a>&nbsp;&nbsp;Outputs</h2>
+
+<div class="p"><!----></div>
+The output structures are:
+
+<ol type="1">
+<li> startloc = starting values for each packet
+<div class="p"><!----></div>
+</li>
+
+<li> loc = final values for each packet
+<div class="p"><!----></div>
+</li>
+
+<li> deposition = maps of adsorption on the surface of each object in the
+system (only returned if options.trackloss=1).
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+The startloc structure contains:
+
+<ul>
+<li> x,y,z = Initial x, y, and z positions for each packet in a reference frame
+fixed on the starting object [object radii]. Need to figure out exactly what
+this returns.
+<div class="p"><!----></div>
+</li>
+
+<li> vx, vy, vz = Initial x, y, and z components of the velocity relative to
+the starting object [Planetary radii/second]. This does not include the
+starting objects orbital motion or the planet's motion relative to the sun.
+<div class="p"><!----></div>
+</li>
+
+<li> frac = Initial content
+<div class="p"><!----></div>
+</li>
+
+<li> TravelTime = integration time between 0 and
+options.endtime [seconds]
+<div class="p"><!----></div>
+</li>
+
+<li> phi = initial orbital longitude for the starting moon [radians].
+Geometry.phi gives the orbital longitude at the end of the simulation. This
+array gives the longitude loc.TravelTime seconds earlier.
+<div class="p"><!----></div>
+</li>
+
+<li> longitude = initial surface longitude [radians]
+<div class="p"><!----></div>
+</li>
+
+<li> latitude = initial surface latitude [radians]
+<div class="p"><!----></div>
+</li>
+
+<li> altitude = ejection angle relative to normal [radians]
+<div class="p"><!----></div>
+</li>
+
+<li> azimuth = azimuthal ejection angle [radians]
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+The loc structure contains:
+
+<ul>
+<li> x, y, z = final x, y, and z coordinate for each packet [R<sub>plan</sub>]
+<div class="p"><!----></div>
+</li>
+
+<li> vx, vy, vz = final x, y, and z components of the velocity [R<sub>plan</sub>/s]
+<div class="p"><!----></div>
+</li>
+
+<li> frac = final fractional content
+<div class="p"><!----></div>
+</li>
+
+<li> fintime = travel time for each packet [seconds]
+<div class="p"><!----></div>
+</li>
+
+<li> totalsource = Total initial fractional content
+<div class="p"><!----></div>
+</li>
+</ul>
+If options.trackloss=1, then loc also contains:
+
+<ul>
+<li> lossfrac = fraction lost to ionization and dissociation processes
+<div class="p"><!----></div>
+</li>
+
+<li> hitfrac = fraction which stuck to each object in the system.
+<div class="p"><!----></div>
+</li>
+
+<li> ringfrac = fraction which hit Saturn's rings
+<div class="p"><!----></div>
+</li>
+
+<li> leftfrac = escaping fraction (if options.fullsystem=0)
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+Comments:
+
+<ol type="1">
+<li> All of the fields in the structure which require arrays are actually
+pointers. See Section&nbsp; for notes on using pointers in IDL.
+<div class="p"><!----></div>
+</li>
+
+<li> The sum of the final fractional content and all the loss fractions should
+equal the initial starting content of the packet: <br />
+*loc.frac + *loc.lossfrac + *loc.hitfrac + *loc.ringfrac + *loc.leftfrac  =
+*startloc.frac
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+The deposition structure contains:
+
+<ul>
+<li> map
+<div class="p"><!----></div>
+</li>
+
+<li> longitude
+<div class="p"><!----></div>
+</li>
+
+<li> latitude
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+ <h2><a name="tth_sEc5">
+5</a>&nbsp;&nbsp;Using the Model</h2>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc5.1">
+5.1</a>&nbsp;&nbsp;Running the Model</h3>
+
+<div class="p"><!----></div>
+The basic command for running a model is: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modeldriver, inputfile, outputfile, seed, modstream=modstream, dt=dt,
+minimize=minimize 
+
+<ul>
+<li> inputfile = name of the input file
+<div class="p"><!----></div>
+</li>
+
+<li> outputfile = name of the output file
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">seed</font> = seed to use in the random number generator. If not
+specified, one will be chosen randomly.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">modstream</font> = 0, 1, or 2 depending on which mode to use. 
+Normal mode is 0, streamline modes are 1 and 2. Default = 0
+<div class="p"><!----></div>
+</li>
+
+<li> dt = time step if running in streamline mode [seconds].
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">minimize</font> = 1/0 to compress/not compress the output 
+structures. This can save a lot of disk space, but you also lose information.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+There are three modes for running the model. 
+
+<ul>
+<li> Normal mode - runs a normal model simulation. Only the begining and final
+state of each packet is recorded. This is the default mode, or it can be set
+explicitly by setting modstream=0
+<div class="p"><!----></div>
+</li>
+
+<li> Streamline Mode A - set modstream=1. Do not use this mode if packets
+bounce when striking the surface.
+<div class="p"><!----></div>
+</li>
+
+<li> Streamline Mode B - set modstream=2. This method treats packet bouncing
+correctly, but it is slower than method A.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+To set up many models to run, use:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run_model, its, filelist=filelist, minimize=minimize,
+nodelete=nodelete, cycle=cycle
+
+<ul>
+<li> <font color="#FF0000">its</font> = number of iterations for each model. Default = 100
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">filelist</font> = name of a file containing the list of model input
+and output files (see below). Defualt = `files.dat'
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">minimize</font> = 1/0 to compress/not compress the output files.
+Default = 0
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">nodelete</font> = 0/1 to delete/keep the intermediate files.
+Default = 0. In general, there is no reason to keep the intermediate files.
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">cycle</font> = 1/0 to cycle through the input files or do all the
+iterations of each input file before proceeding onto the next. Default = 0
+(don't cycle)
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+The <i>filelist</i> file (files.dat) must be set up as follows:
+  
+<pre>
+&nbsp;&nbsp;inputfilepath		outputfilepath
+&nbsp;&nbsp;file0.input		file0.output
+&nbsp;&nbsp;file1.input		file1.output
+&nbsp;&nbsp;file2.input		file2.output
+&nbsp;&nbsp;
+</pre>
+The list of files can be as long as you want. I generally combine 100
+iterations of 30,000 packets, which makes a large output file (&#160;&#8764;&#160;300 MB per
+file). To run more iterations, set up files.dat with the lines:
+  
+<pre>
+&nbsp;&nbsp;file0.input		file0.0.input
+&nbsp;&nbsp;file0.input		file0.1.input
+&nbsp;&nbsp;file0.input		file0.2.input
+&nbsp;&nbsp;
+</pre>
+and average the resulting images.
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc5.2">
+5.2</a>&nbsp;&nbsp;Looking at the Results</h3>
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> image = model_images(imtype, outputfile, strength, keyword=keyword) <br />
+This is the basic routine for makeing 2D model images of density, column
+density, intensity, or simulating spectra. Required inputs:
+  
+<ul>
+<li> imtype = `column', `density', `intensity', `spectrum'
+<div class="p"><!----></div>
+</li>
+
+<li> outputfile = name of the outputfile
+<div class="p"><!----></div>
+</li>
+
+<li> strength = source strength in units of 10<sup>26</sup> atoms/sec. Usually I
+  set this to 1 and multiply by source strength after the fact. The result is
+  linear with respect to this parameter since all the emission is assumed to be
+  optically thin.
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+
+<li> result = line_of_sight(imtype, pos, dir, dr, outputfile, strength) <br />
+This determines the column density or intensity along the sightlines determined
+by direction dir from position pos.
+<div class="p"><!----></div>
+</li>
+
+<li> den = density_track(x, y, z, dr, outputfile, strength) <br />
+Determines the density along the path x, y, z. This may not be working - needs
+to be verified.
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+ <h2><a name="tth_sEc6">
+6</a>&nbsp;&nbsp;Physics and Computational Section</h2>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc6.1">
+6.1</a>&nbsp;&nbsp;Coordinate Systems</h3> <a name="sec:coordsystems">
+</a>
+
+<div class="p"><!----></div>
+For the planets (Mercury, Jupiter, and Saturn) the surface latitude and
+longitudes are fixed with the subsolar point at (0<sup>&#176;</sup>,0<sup>&#176;</sup>). Longitude
+increases westward such that the dusk terminator is at 90<sup>&#176;</sup>, midnight is
+180<sup>&#176;</sup>, and the dawn terminator is at 270<sup>&#176;</sup>. Satellite longitude and
+latitude are fixed with respect to the sub-planet point and increase eastward:
+90<sup>&#176;</sup>&nbsp;is the leading (downstream) point, 180 <sup>&#176;</sup>&nbsp;is the anti-planet 
+point, and 270 <sup>&#176;</sup>&nbsp;is the trailing (upstream) point. Latitude increases from
+the south pole (-90<sup>&#176;</sup>) to the north pole (90<sup>&#176;</sup>). No tilts or inclinations
+of the satellites relative to the ecliptic or planetary equatorial planes are
+included.
+(Note that all angles in the input files are in radians.)
+
+<div class="p"><!----></div>
+ <h2><a name="tth_sEc7">
+7</a>&nbsp;&nbsp;Appendix A: Directory Structure</h2>
+
+<div class="p"><!----></div>
+Directory structure as of 19 January 2010. Directories are listed in blue. IDL
+program files are in black. Data files are in red. Data files ending in 
+<i>.dat</i> are ASCII format. Data files ending in <i>.sav</i> are IDL save 
+files. I've removed some files from this listing that don't do anything.
+
+<div class="p"><!----></div>
+Notes: See Section&nbsp; for a description of atomic data files 
+and lists of the available reactions and references.
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> <font color="#0000FF">model_pro_2.0</font>
+  
+<ol type="a">
+<li> <font color="#0000FF">AtomicData</font>
+    
+<ol type="i">
+<li> Lishawa_crosssections.pro
+<div class="p"><!----></div>
+</li>
+
+<li> extract_Berez_data.pro
+<div class="p"><!----></div>
+</li>
+
+<li> extract_Huebner_data.pro
+<div class="p"><!----></div>
+</li>
+
+<li> find_reactions_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> make_crosssec_struct_2.2.pro
+<div class="p"><!----></div>
+</li>
+
+<li> make_ratecoef_struct_2.1.pro
+<div class="p"><!----></div>
+</li>
+
+<li> make_reaction_list_2.1.pro
+<div class="p"><!----></div>
+</li>
+
+<li> rate_func_1.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> rate_integral_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> set_default_emission_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> set_default_reactions_2.0.pro
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">Data</font>
+    
+<ol type="i">
+<li> <font color="#0000FF">CAPSplasma</font>
+      
+<ol type="A">
+<li> <font color="#FF0000">SaturnPlasma.2008-04-16.sav</font>
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">VoyagerTorus</font>
+      
+<ol type="A">
+<li> <font color="#FF0000">VoyagerTorus.sav</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">electrons.energetic.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">electrons.thermal.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">ions.energetic.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">ions.thermal.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">make_plasma_struct.pro</font>
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">JupiterConstants.sav</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">MercDist.sav</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">MercuryConstants.sav</font>
+<div class="p"><!----></div>
+</li>
+
+<li> physical_constants_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">SaturnConstants.sav</font>
+<div class="p"><!----></div>
+</li>
+
+<li> SystemConstants_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">SolarConstants.sav</font>
+<div class="p"><!----></div>
+</li>
+
+<li> atomicmass_2.0.pro
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">Display</font>
+    
+<ol type="i">
+<li> density_track_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> line_of_sight_2.5.pro
+<div class="p"><!----></div>
+</li>
+
+<li> model_images_2.6.pro
+<div class="p"><!----></div>
+</li>
+
+<li> model_view.pro
+<div class="p"><!----></div>
+</li>
+
+<li> quick_look.pro
+<div class="p"><!----></div>
+</li>
+
+<li> surface_column_density.pro
+<div class="p"><!----></div>
+</li>
+
+<li> zenith_column_2.0.pro
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">Docs</font>
+    
+<ol type="i">
+<li> manual.tex
+<div class="p"><!----></div>
+</li>
+
+<li> manual.pdf
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">Forces</font>
+    
+<ol type="i">
+<li> accel_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> get_gvalue_2.1.pro
+<div class="p"><!----></div>
+</li>
+
+<li> gravity_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> lorentz_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> radiation_pressure_2.1.pro
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">Integrator</font>
+    
+<ol type="i">
+<li> driver_2.5.pro
+<div class="p"><!----></div>
+</li>
+
+<li> impact_check_2.7.pro
+<div class="p"><!----></div>
+</li>
+
+<li> rk5_2.0.pro
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">Lifetimes</font>
+    
+<ol type="i">
+<li> JupiterPlasma_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> SaturnPlasma_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> TorusState_1.1.pro
+<div class="p"><!----></div>
+</li>
+
+<li> create_lossinfo_2.1.pro
+<div class="p"><!----></div>
+</li>
+
+<li> determine_ratecoefs_2.1.pro
+<div class="p"><!----></div>
+</li>
+
+<li> ionization_rate_3.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> lifetime_setup_2.3.pro
+<div class="p"><!----></div>
+</li>
+
+<li> load_plasma_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> make_lifetime_grid_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> neutlt_1.1.pro
+<div class="p"><!----></div>
+</li>
+
+<li> xyz_to_magcoord_2.0.pro
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">Misc</font>
+    
+<ol type="i">
+<li> OTD.pro
+<div class="p"><!----></div>
+</li>
+
+<li> dipole_field.pro
+<div class="p"><!----></div>
+</li>
+
+<li> dual_dipoles.pro
+<div class="p"><!----></div>
+</li>
+
+<li> radial_smooth.pro
+<div class="p"><!----></div>
+</li>
+
+<li> radial_subtract.pro
+<div class="p"><!----></div>
+</li>
+
+<li> rotate_packets.pro
+<div class="p"><!----></div>
+</li>
+
+<li> trace_fieldline.pro
+<div class="p"><!----></div>
+</li>
+
+<li> trace_normline.pro
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">SourceDistributions</font>
+    
+<ol type="i">
+<li> MonteCarloDistribution_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> SO2exosphere_distribution_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> add_perturbation_2.2.pro
+<div class="p"><!----></div>
+</li>
+
+<li> angular_distribution_2.2.pro
+<div class="p"><!----></div>
+</li>
+
+<li> charge_exchange_perturbation_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> exosphere_distribution_2.1.pro
+<div class="p"><!----></div>
+</li>
+
+<li> show_veldist_1.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> source_distribution_2.2.pro
+<div class="p"><!----></div>
+</li>
+
+<li> speed_distribution_2.4.pro
+<div class="p"><!----></div>
+</li>
+
+<li> speed_dists_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> surface_distribution_2.1.pro
+<div class="p"><!----></div>
+</li>
+
+<li> torus_distribution_2.0.pro
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">SystemViewer</font>  <br />
+    <i>This directory is empty. I think I'm going to put my system viewer 
+    widget in here when I get it cleaned up.</i>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">Widget</font> <br />
+    <i>Nothing in here works very well except the run_widget.</i>
+<div class="p"><!----></div>
+</li>
+
+<li> combine_iterations_2.3.pro
+<div class="p"><!----></div>
+</li>
+
+<li> compress_structs_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> compile_model_2.0
+<div class="p"><!----></div>
+</li>
+
+<li> extract_distribution_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> inputs_saverestore_2.8.pro
+<div class="p"><!----></div>
+</li>
+
+<li> loc_operations_2.1.pro
+<div class="p"><!----></div>
+</li>
+
+<li> locmoon_1.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> model_common_blocks_2.0.pro
+<div class="p"><!----></div>
+</li>
+
+<li> modeldriver_2.4.pro
+<div class="p"><!----></div>
+</li>
+
+<li> modstreamA_2.3.pro
+<div class="p"><!----></div>
+</li>
+
+<li> modstreamB_2.1.pro
+<div class="p"><!----></div>
+</li>
+
+<li> planet_dist_2.0.pro
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">AtomicData</font>
+  
+<ol type="a">
+<li><font color="#0000FF">Emission</font>
+    
+<ol type="i">
+<li> <font color="#0000FF">O</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">O_2</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">S</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">SO_2</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">DefaultsList.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">ReactionList.rate.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> set_up_all_reactions.pro
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li><font color="#0000FF">Loss</font>
+    
+<ol type="i">
+<li> <font color="#0000FF">AlO</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">C</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">CH_4</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">CO</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">CO_2</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">Ca</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">CaO</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">Cl</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">FeO</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">H</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">H_2</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">H_2O</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">H_2O+</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">H_3O+</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">He</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">K</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">KO</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">Mg</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">MgO</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">N</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">NH_3</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">N_2</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">Na</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">O</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">OH</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">O_2</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">S</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">SO</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">SO_2</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">SiO</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">TiO</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#0000FF">multi-species</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">DefaultsList.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">ReactionList.rate.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> set_up_all_reactions.pro
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li><font color="#0000FF">g-values</font>
+    
+<ol type="i">
+<li> <font color="#FF0000">CI.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">CaI.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">CaII.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">HI.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">HeI.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">KI.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">MgI.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">MgII.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">NaI.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">OH.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">OI.dat</font>
+<div class="p"><!----></div>
+</li>
+
+<li> <font color="#FF0000">SI.dat</font>
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+ <h2><a name="tth_sEc8">
+8</a>&nbsp;&nbsp;Appendix B: Inputfile Summary</h2>
+
+<div class="p"><!----></div>
+This appendix contains all the possibilities for each input. The lines can be 
+copied and pasted into an input file as needed.
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc8.1">
+8.1</a>&nbsp;&nbsp;Geometry</h3>
+
+<ul>
+<li> Mercury
+  
+<pre>
+&nbsp;&nbsp;geometry.planet&nbsp;=&nbsp;Mercury
+&nbsp;&nbsp;geometry.taa&nbsp;=&nbsp;0.
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;1
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Jupiter
+  
+<pre>
+&nbsp;&nbsp;geometry.planet&nbsp;=&nbsp;Jupiter
+&nbsp;&nbsp;geometry.startpoint&nbsp;=&nbsp;Io
+&nbsp;&nbsp;geometry.CML&nbsp;=&nbsp;0.
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;0.		;;&nbsp;Jupiter
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Io
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Europa
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Ganymede
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Callisto
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Jupiter
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Io&nbsp;
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Europa
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Ganymede
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Callisto
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Saturn
+  
+<pre>
+&nbsp;&nbsp;geometry.planet&nbsp;=&nbsp;Saturn
+&nbsp;&nbsp;geometry.startpoint&nbsp;=&nbsp;Enceladus
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;0.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Saturn
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Mimas
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Enceladus
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Tethys
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Dione
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Rhea
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Titan
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Hyperion
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Iapetus
+&nbsp;&nbsp;geometry.phi&nbsp;=&nbsp;4.71239&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Phoebe
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Saturn
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Mimas
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Enceladus
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Tethys
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Dione
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Rhea
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Titan
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Hyperion
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Iapetus
+&nbsp;&nbsp;geometry.include&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;Phoebe
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc8.2">
+8.2</a>&nbsp;&nbsp;Sticking_Info</h3>
+
+<div class="p"><!----></div>
+
+<ul>
+<li> For everything to stick to the surface:
+  
+<pre>
+&nbsp;&nbsp;sticking_info.StickCoef&nbsp;=&nbsp;1
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> For bouncing packets with thermal reemission:
+  
+<pre>
+&nbsp;&nbsp;sticking_info.StickCoef&nbsp;=&nbsp;0
+&nbsp;&nbsp;sticking_info.emitfn&nbsp;=&nbsp;Maxwellian
+&nbsp;&nbsp;sticking_info.Tsurf&nbsp;=&nbsp;0
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> For bouncing packets to scatter elastically 
+  
+<pre>
+&nbsp;&nbsp;sticking_info.StickCoef&nbsp;=&nbsp;0
+&nbsp;&nbsp;sticking_info.emitfn&nbsp;=&nbsp;elastic&nbsp;scattering
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> For partial thermal accommodation of bouncing packets
+  
+<pre>
+&nbsp;&nbsp;sticking_info.StickCoef&nbsp;=&nbsp;0
+&nbsp;&nbsp;sticking_info.emitfn&nbsp;=&nbsp;thermalized
+&nbsp;&nbsp;sticking_info.accom_factor&nbsp;=&nbsp;0.5
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc8.3">
+8.3</a>&nbsp;&nbsp;Forces</h3>
+
+<div class="p"><!----></div>
+
+<pre>
+forces.gravity&nbsp;=&nbsp;1
+forces.radpres&nbsp;=&nbsp;1
+forces.lorentz&nbsp;=&nbsp;0
+
+</pre>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc8.4">
+8.4</a>&nbsp;&nbsp;SpatialDist</h3>
+
+<div class="p"><!----></div>
+
+<ul>
+<li> For packets spread across the surface (or uniform exobase) between a 
+specified longitude and latitude range:
+  
+<pre>
+&nbsp;&nbsp;SpatialDist.type&nbsp;=&nbsp;surface
+&nbsp;&nbsp;SpatialDist.random_even&nbsp;=&nbsp;random
+&nbsp;&nbsp;SpatialDist.use_map&nbsp;=&nbsp;0
+&nbsp;&nbsp;SpatialDist.exobase&nbsp;=&nbsp;1.
+&nbsp;&nbsp;SpatialDist.longitude0&nbsp;=&nbsp;0.
+&nbsp;&nbsp;SpatialDist.longitude1&nbsp;=&nbsp;6.2831853
+&nbsp;&nbsp;SpatialDist.latitude0&nbsp;=&nbsp;-1.5707963
+&nbsp;&nbsp;SpatialDist.latitude1&nbsp;=&nbsp;1.5707963
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> For packets spread across the surface (or uniform exobase) according to a
+pre-specified probability distribution:
+  
+<pre>
+&nbsp;&nbsp;SpatialDist.type&nbsp;=&nbsp;surface
+&nbsp;&nbsp;SpatialDist.random_even&nbsp;=&nbsp;random
+&nbsp;&nbsp;SpatialDist.use_map&nbsp;=&nbsp;1
+&nbsp;&nbsp;SpatialDist.mapfile&nbsp;=&nbsp;mapfile.sav
+&nbsp;&nbsp;SpatialDist.exobase&nbsp;=&nbsp;1.
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> For packets distributed in a torus around the central planet
+  
+<pre>
+&nbsp;&nbsp;SpatialDist.type&nbsp;=&nbsp;torus
+&nbsp;&nbsp;SpatialDist.random_even&nbsp;=&nbsp;random
+&nbsp;&nbsp;SpatialDist.radius0&nbsp;=&nbsp;4.
+&nbsp;&nbsp;SpatialDist.radius1&nbsp;=&nbsp;1.
+&nbsp;&nbsp;SpatialDist.radius2&nbsp;=&nbsp;1.
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> For packets distributed in a spherically symmetric exosphere
+  
+<pre>
+&nbsp;&nbsp;SpatialDist.type&nbsp;=&nbsp;exosphere
+&nbsp;&nbsp;SpatialDist.exotype&nbsp;=&nbsp;powerlaw
+&nbsp;&nbsp;SpatialDist.b&nbsp;=&nbsp;-2
+&nbsp;&nbsp;SpatialDist.rmax&nbsp;=&nbsp;10.
+&nbsp;&nbsp;SpatialDist.block_shadow&nbsp;=&nbsp;0
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> For packets distributed according to Vincent Dol's SO<sub>2</sub> exosphere 
+distribution:
+  
+<pre>
+&nbsp;&nbsp;SpatialDist.type&nbsp;=&nbsp;SO2&nbsp;exosphere
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc8.5">
+8.5</a>&nbsp;&nbsp;SpeedDist</h3>
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Gaussian speed distribution
+  
+<pre>
+&nbsp;&nbsp;SpeedDist.type&nbsp;=&nbsp;Gaussian
+&nbsp;&nbsp;SpeedDist.vprob&nbsp;=&nbsp;3.
+&nbsp;&nbsp;SpeedDist.sigma&nbsp;=&nbsp;1.
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Tri-gaussian speed distribution
+  
+<pre>
+&nbsp;&nbsp;SpeedDist.type&nbsp;=&nbsp;trigaussian
+&nbsp;&nbsp;SpeedDist.vxprob&nbsp;=&nbsp;3.
+&nbsp;&nbsp;SpeedDist.vxsigma&nbsp;=&nbsp;1.
+&nbsp;&nbsp;SpeedDist.vyprob&nbsp;=&nbsp;2.
+&nbsp;&nbsp;SpeedDist.vysigma&nbsp;=&nbsp;0.5
+&nbsp;&nbsp;SpeedDist.vzprob&nbsp;=&nbsp;1.
+&nbsp;&nbsp;SpeedDist.vzsigma&nbsp;=&nbsp;0.1
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Sputtering speed distribution
+  
+<pre>
+&nbsp;&nbsp;SpeedDist.type&nbsp;=&nbsp;sputtering
+&nbsp;&nbsp;SpeedDist.U&nbsp;=&nbsp;2.
+&nbsp;&nbsp;SpeedDist.alpha&nbsp;=&nbsp;3
+&nbsp;&nbsp;SpeedDist.beta&nbsp;=&nbsp;1.
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Maxwellian at constant temperature
+  
+<pre>
+&nbsp;&nbsp;SpeedDist.type&nbsp;=&nbsp;maxwellian
+&nbsp;&nbsp;SpeedDist.temperature&nbsp;=&nbsp;2000.
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Thermal distribution at local surface temperature
+  
+<pre>
+&nbsp;&nbsp;SpeedDist.type&nbsp;=&nbsp;thermal
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Equal probability for v<sub>prob</sub> &#177;&#8710;v
+  
+<pre>
+&nbsp;&nbsp;SpeedDist.type&nbsp;=&nbsp;flat
+&nbsp;&nbsp;SpeedDist.vprob&nbsp;=&nbsp;3
+&nbsp;&nbsp;SpeedDist.delv&nbsp;=&nbsp;1.
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Start packets in stable, circular orbits about the central planet
+  
+<pre>
+&nbsp;&nbsp;SpeedDist.type&nbsp;=&nbsp;circular&nbsp;orbits
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Use Vincent Dol's SO<sub>2</sub> exosphere velocity distribution
+  
+<pre>
+&nbsp;&nbsp;SpeedDist.type&nbsp;=&nbsp;dolsfunction
+&nbsp;&nbsp;SpeedDist.dols0&nbsp;=&nbsp;1.
+&nbsp;&nbsp;SpeedDist.dols1&nbsp;=&nbsp;1.
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc8.6">
+8.6</a>&nbsp;&nbsp;AngularDist</h3>
+
+<div class="p"><!----></div>
+
+<ul>
+<li> The speed distribution selected doesn't need an angular distribution to
+be specified.
+  
+<pre>
+&nbsp;&nbsp;AngularDist.type&nbsp;=&nbsp;none
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Send packets out radially from the central obeject
+  
+<pre>
+&nbsp;&nbsp;AngularDist.type&nbsp;=&nbsp;radial
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Send packets out isotropically between specified altitude and azimuth
+ranges
+  
+<pre>
+&nbsp;&nbsp;AngularDist.type&nbsp;=&nbsp;isotropic
+&nbsp;&nbsp;AngularDist.altitude0&nbsp;=&nbsp;0.
+&nbsp;&nbsp;AngularDist.altitude1&nbsp;=&nbsp;1.5707963
+&nbsp;&nbsp;AngularDist.azimuth0&nbsp;=&nbsp;0.
+&nbsp;&nbsp;AngularDist.azimuth1&nbsp;=&nbsp;6.2831853
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Send packets out proportional to cos<sup>n</sup> &#952;, where &#952; is the
+altitude.
+  
+<pre>
+&nbsp;&nbsp;AngularDist.type&nbsp;=&nbsp;costheta
+&nbsp;&nbsp;AngularDist.n&nbsp;=&nbsp;1.
+&nbsp;&nbsp;AngularDist.altitude0&nbsp;=&nbsp;0.
+&nbsp;&nbsp;AngularDist.altitude1&nbsp;=&nbsp;1.5707963
+&nbsp;&nbsp;AngularDist.azimuth0&nbsp;=&nbsp;0.
+&nbsp;&nbsp;AngularDist.azimuth1&nbsp;=&nbsp;6.2831853
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc8.7">
+8.7</a>&nbsp;&nbsp;PerturbVel</h3>
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Don't add a perturbation onto the initial velocity distribution.
+  
+<pre>
+&nbsp;&nbsp;PerturbVel.type&nbsp;=&nbsp;none
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Add a Gaussian perturbation onto the initial velocity distribution.
+  
+<pre>
+&nbsp;&nbsp;PerturbVel.type&nbsp;=&nbsp;gaussian
+&nbsp;&nbsp;PerturbVel.vprob&nbsp;=&nbsp;1.
+&nbsp;&nbsp;PerturbVel.sigma&nbsp;=&nbsp;0.2
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Add a tri-gaussian perturbation onto the initial velocity distribution
+  
+<pre>
+&nbsp;&nbsp;PerturbVel.type&nbsp;=&nbsp;trigaussian
+&nbsp;&nbsp;PerturbVel.vxprob&nbsp;=&nbsp;1.
+&nbsp;&nbsp;PerturbVel.vxsigma&nbsp;=&nbsp;0.2
+&nbsp;&nbsp;PerturbVel.vyprob&nbsp;=&nbsp;1.
+&nbsp;&nbsp;PerturbVel.vysigma&nbsp;=&nbsp;0.2
+&nbsp;&nbsp;PerturbVel.vzprob&nbsp;=&nbsp;1.
+&nbsp;&nbsp;PerturbVel.vzsigma&nbsp;=&nbsp;0.2
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Use a charge exchage type perturbation
+  
+<pre>
+&nbsp;&nbsp;PerturbVel.type&nbsp;=&nbsp;charge&nbsp;exchange
+&nbsp;&nbsp;PerturbVel.flowvel&nbsp;=&nbsp;10.
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc8.8">
+8.8</a>&nbsp;&nbsp;plasma_info</h3>
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Mercury - <i>not used</i>
+<div class="p"><!----></div>
+</li>
+
+<li> Jupiter
+  
+<pre>
+&nbsp;&nbsp;plasma_info.eps&nbsp;=&nbsp;0.246
+&nbsp;&nbsp;plasma_info.thermal&nbsp;=&nbsp;1
+&nbsp;&nbsp;plasma_info.energetic&nbsp;=&nbsp;1
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Saturn 
+  
+<pre>
+&nbsp;&nbsp;plasma_info.elecdenmod&nbsp;=&nbsp;1
+&nbsp;&nbsp;plasma_info.electempmod&nbsp;=&nbsp;1
+&nbsp;&nbsp;
+</pre>
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+     <h3><a name="tth_sEc8.9">
+8.9</a>&nbsp;&nbsp;options</h3>
+
+<div class="p"><!----></div>
+
+<pre>
+options.packets&nbsp;=&nbsp;30000
+options.endtime&nbsp;=&nbsp;36000
+options.resolution&nbsp;=&nbsp;1e-6
+options.at_once&nbsp;=&nbsp;0
+options.atom&nbsp;=&nbsp;Na
+options.lifetime&nbsp;=&nbsp;0
+options.fullsystem&nbsp;=&nbsp;0
+options.outeredge&nbsp;=&nbsp;20.
+options.motion&nbsp;=&nbsp;1
+options.trackloss&nbsp;=&nbsp;0
+options.datapath&nbsp;=&nbsp;$HOME/Data/AtomicData
+options.modelpath&nbsp;=&nbsp;$HOME/Work/NeutralModel/modelpro_2.0
+
+</pre>
+
+<div class="p"><!----></div>
+
+<br /><br /><hr /><small>File translated from
+T<sub><font size="-1">E</font></sub>X
+by <a href="http://hutchinson.belmont.ma.us/tth/">
+T<sub><font size="-1">T</font></sub>H</a>,
+version 3.87.<br />On 11 Jun 2010, 16:55.</small>
+</html>

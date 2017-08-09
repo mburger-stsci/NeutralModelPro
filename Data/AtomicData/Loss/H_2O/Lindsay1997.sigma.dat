@@ -1,0 +1,13 @@
+Lindsay et al 1997		// REFERENCE
+Cross Section			// DATATYPE
+Ion-Neutral 			// REACTYPE
+1				// NREAC
+H+, H_2O -> H, H_2O+		// REACTION
+eV				// ENERGY UNITS
+com energy			// ETYPE
+cm-2				// CROSS SECTION UNITS
+\begindata
+500.000 :   1.95000e-15
+1500.00 :   1.65000e-15
+5000.00 :   1.25000e-15
+\enddata

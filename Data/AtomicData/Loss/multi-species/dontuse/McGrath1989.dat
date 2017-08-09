@@ -1,0 +1,43 @@
+McGrath and Johnson 1989
+Ion-Neutral : cm^-2
+Neutral : Ion : Reaction : Cross Section
+O  :  O+   : O+ + O -> O + O+ 		: 22.e-16
+O  :  O++  : O++ + O -> O + O++ 	: 9.e-16
+O  :  O++  : O++ + O -> O+ + O+		: 0.9e-16
+O  :  S+   : S+ + O -> S + O+ 		: .1e-16
+O  :  S++  : S++ + O -> S+ + O+ 	: 3.8e-16
+O  :  S+++ : S+++ + O -> S++ + O+	: 32.e-16
+O  :  S+++ : S+++ + O -> S+ + O++	: 1.e-30
+
+S  :  O+   : O+ + S -> O + S+     	: 5.e-16
+S  :  O++  : O++ + S -> O+ + S+   	: 39.e-16
+S  :  S+   : S+ + S -> S + S+     	: 40.e-16
+S  :  S++  : S++ + S -> S + S++   	: 13.e-16
+S  :  S++  : S++ + S -> S+ + S+   	: 0.5e-16
+S  :  S+++ : S+++ + S -> S++ + S+ 	: 22.e-16
+
+Na :  O+   : O+ + Na -> O + Na+         : 1.e-30
+Na :  O++  : O++ + Na -> O+ + Na+       : 49.2e-16
+Na :  S+   : S+ + Na -> S + Na+         : 1.e-30
+Na :  S++  : S++ + Na -> S+ + Na+       : 57.2e-16
+
+K  :  O+   : O+ + K -> O + K+           : 38.e-16
+K  :  O++  : O++ + K -> O+ + K+         : 24.e-16
+K  :  S+   : S+ + K -> S + K+           : 1.e-30
+K  :  S++  : S++ + K -> S+ + K+         : 45.e-16
+
+SO_2 : O+   : O+ + SO_2 -> O + SO_2+     : 11.e-16
+SO_2 : O++  : O++ + SO_2 -> O+ + SO_2+   : 13.e-16
+SO_2 : S+   : S+ + SO_2 -> S + SO_2+     : 0.1e-16
+SO_2 : S++  : S++ + SO_2 -> S+ + SO_2+   : 16.e-16
+SO_2 : S+++ : S+++ + SO_2 -> S++ + SO_2+ : 20.e-16
+
+O_2 : O+   : O+ + O_2 -> O + O_2+       : 13.e-16
+O_2 : O++  : O++ + O_2 -> O+ + O_2+     : 12.e-16
+O_2 : S+   : S+ + O_2 -> S + O_2+       : 0.1e-16
+O_2 : S++  : S++ + O_2 -> S+ + S_2+     : 15.e-16
+
+SO :  O+   : O+ + SO -> O + SO+         : 0.8e-16
+SO :  O++  : O++ + SO -> O+ + SO+       : 22.e-16
+SO :  S+   : S+ + SO -> S + SO+         : 50.e-16
+SO :  S++  : S++ + SO -> S+ + SO+       : 22.e-16

@@ -1,0 +1,17 @@
+McGrath and Johnson 1989 	// REFERENCE
+Cross Section			// DATATYPE
+Ion-Neutral			// REACTYPE
+1				// NREAC
+Na+, K -> Na, K+		// REACTION
+eV				// ENERGY UNITS
+incident energy			// ETYPE
+cm-2 				// CROSS SECTION UNITS
+\begindata
+1.e3 : 2.85e-17
+2.e3 : 3.15e-16
+4.e3 : 9.15e-16
+1.e4 : 2.8e-15
+4.e4 : 6.35e-15
+1.e5 : 6.25e-15
+4.e5 : 2.63e-15
+\enddata

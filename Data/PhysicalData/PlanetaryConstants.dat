@@ -1,0 +1,51 @@
+radius = equatorial radius of central object (km)
+a = semi-major axis of heliocentric orbit (AU for planets, km for satellites)
+e = eccentricity
+tilt = inclination of its axis relative to orbital plane (deg)
+i = inclination of statellite orbit relative to the planet's equatorial plane (deg)
+mass = mass (kg)
+rotation period = for planets- sidereal rotation period (hr)
+orbital period = sidereal orbital period (day)
+
+References- 
+ssd.jpl.nasa.gov/?phys_data
+en.wikipedia.org/wiki/Sun
+en.wikipedia.org/wiki/Ceres_(dwarf_planet)
+
+Object	- orbits - radius          - mass        - a        - e         - tilt    - rot period - orb period
+Sun	: Milky Way : 6.955e5      : 1.9891e30   : 0        : 0         : 0       : 601.2	    : 0.
+Mercury	: Sun	    : 2439.7       : 0.330104e24 : 0.387098 : 0.205630  : 0       : 1407.51    : 87.97
+Venus	: Sun	    : 6051.8       : 4.86732e24  : 0.723    : 0.0068    : 177.4   : 5832.45    : 244.70
+Earth	: Sun	    : 6378.14      : 5.97219e24  : 1.0      : 0.0167    : 23.45   : 23.93      : 365.25
+Mars	: Sun	    : 3396.2       : 0.641693e24 : 1.524    : 0.0934    : 23.98   : 24.62      : 687.02
+Jupiter	: Sun	    : 71492.       : 1898.13e24  : 5.203    : 0.0483    : 3.08    : 9.9250     : 4333.
+Saturn	: Sun	    : 60268.       : 568.319e24  : 9.529    : 0.0560    : 26.73   : 10.7625    : 10743.
+Uranus	: Sun	    : 25559.       : 86.8103e24  : 19.19    : 0.0461    : 97.92   : 17.24      : 30700.
+Neptune	: Sun	    : 24764.       : 102.410e24  : 30.09    : 0.0097    : 28.8    : 16.11      : 60280.
+
+Ceres	: Sun	    : 476.2        : 9.43e20     : 2.77     : 0.116     : 3.      : 9.074      : 1681.
+Pluto	: Sun	    : 1151.        : 0.01309e24  : 39.24    : 0.2482    : 122     : 153.29     : 90130.
+
+Moon	: Earth     : 1737.10      : 7.3477e22   : 384400   : 0.554     : 5.16    : 655.728    : 27.322
+
+Phobos  : Mars	    : 11.1         : 1.0659e16   : 9376.    : 0.0151    : 0.      : 7.6533     : 0.31891
+Deimos  : Mars      : 6.2	   : 1.4762e15   : 23463.   : 0.00033   : 0.      : 30.312     : 1.263
+
+Io	 : Jupiter  : 1821.6       : 8.9319e22   : 421800.  : 0.0041    : 0.036   : 42.456     : 1.769
+Europa	 : Jupiter  : 1560.8       : 4.8e22      : 671100.  : 0.0094    : 0.466   : 85.224     : 3.551
+Ganymede : Jupiter  : 2163.2       : 1.4819e23   : 1070400. : 0.0013    : 0.177   : 171.72     : 7.155
+Callisto : Jupiter  : 2410.3       : 1.0759e23   : 1882700. : 0.0074    : 0.192   : 400.56     : 16.69
+
+Mimas     : Saturn  : 198.2        : 0.4e20      : 185539.  : 0.0196    : 1.574   : 22.608     : 0.942
+Enceladus : Saturn  : 252.1        : 1.1e20      : 238037.  : 0.0047    : 0.009   : 31.344     : 1.370
+Tethys    : Saturn  : 533.0        : 6.2e20      : 294672.  : 0.0001    : 1.091   : 45.312     : 1.888
+Dione     : Saturn  : 561.7        : 11e20       : 377415.  : 0.0022    : 0.028   : 65.688     : 2.737
+Rhea      : Saturn  : 764.3        : 23e20       : 527068.  : 0.0010    : 0.333   : 108.432    : 4.518
+Titan     : Saturn  : 2575.5       : 1350e20     : 1221865. : 0.0288    : 0.312   : 478.800    : 15.95
+Hyperion  : Saturn  : 135.0        : 5.58e18     : 1500934. : 0.0232    : 0.615   : 510.720    : 21.28
+Iapetus   : Saturn  : 735.6        : 18e20       : 3560851. : 0.0293    : 78.313  : 1903.92    : 79.33
+Phoebe    : Saturn  : 106.6        : 8.292e18    : 12947913.: 0.1634    : 175.24  : 13207.2    : 550.30
+
+Charon    : Pluto   : 593.         : 1.62e21     : 19600.   : 0.        : 0.      : 153.294    : 6.38725
+Nix       : Pluto   : 68.          : 2e18        : 48708.   : 0.        : 0.      : 596.544    : 24.856
+Hydra     : Pluto   : 84.          : 2e18        : 64749.   : 0.        : 0.      : 916.944    : 38.206

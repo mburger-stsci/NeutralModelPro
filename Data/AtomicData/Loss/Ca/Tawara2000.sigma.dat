@@ -1,0 +1,32 @@
+Tawara 2000		   // REFERENCE
+Cross Section              // DATATYPE 
+Electron Impact            // REACTYPE
+1                          // NREAC
+Ca, e -> Ca+, 2e           // REACTION
+eV                         // ENERGY UNITS
+cm-2                       // CROSS SECTION UNITS
+\begindata
+6.1	: 0.e-16
+8	: 2.5e-16
+10	: 7.4e-16
+15	: 9.5e-16
+20	: 8.9e-16
+25	: 8.2e-16
+30	: 7.3e-16
+40	: 6.1e-16
+50	: 5.2e-16
+60	: 4.6e-16
+80	: 3.8e-16
+100	: 3.2e-16
+150	: 2.3e-16
+200	: 1.8e-16
+300	: 1.3e-16
+400	: 1.05e-16
+600	: 7.2e-17
+800	: 5.5e-17
+1000	: 4.5e-17
+2000	: 2.3e-17
+4000	: 1.3e-17
+6000	: 8.3e-18
+10000	: 5.1e-18
+\enddata

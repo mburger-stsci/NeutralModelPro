@@ -1,0 +1,26 @@
+Joshipura et al. 2001		 // REFERENCE
+Cross Section		   	// DATATYPE 
+Electron Impact		   	// REACTYPE
+1		  	   	// NREAC
+OH, e -> OH+, 2e   	   	// REACTION
+eV			   	// ENERGY UNITS
+cm-2			   	// CROSS SECTION UNITS
+\begindata
+20	: 0.30e-16
+30	: 1.00e-16
+40	: 1.40e-16
+50	: 1.55e-16
+60	: 1.70e-16
+70	: 1.85e-16
+80	: 1.80e-16
+100	: 1.78e-16
+200	: 1.50e-16
+300	: 1.17e-16
+400	: 0.98e-16
+500	: 0.84e-16
+600	: 0.78e-16
+800	: 0.63e-16
+900	: 0.56e-16
+1000	: 0.53e-16
+2000	: 0.35e-16
+\enddata

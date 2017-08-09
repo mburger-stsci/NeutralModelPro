@@ -1,0 +1,36 @@
+Lishawa et al. 1990		// REFERENCE
+Cross Section			// DATATYPE
+Ion-Neutral 			// REACTYPE
+1				// NREAC
+H_2O+, H_2O -> H_2O, H_2O+	// REACTION
+eV				// ENERGY UNITS
+incident energy			// ETYPE
+cm-2				// CROSS SECTION UNITS
+\begindata
+1.3   : 42.0e-16
+2.2   : 15.0e-16
+4.5   : 13.5e-16
+5.2   : 9.0e-16
+7.2   : 10.5e-16
+9.5   : 10.3e-16
+11.9  : 8.0e-16
+12.6  : 9.0e-16
+14.4  : 7.0e-16
+16.9  : 8.0e-16
+17.6  : 9.5e-16
+19.8  : 8.5e-16
+20.0  : 10.0e-16
+24.3  : 8.4e-16
+25.2  : 8.0e-16
+27.7  : 10.0e-16
+29.7  : 6.0e-16
+34.6  : 5.0e-16
+35.3  : 7.0e-16
+39.6  : 5.8e-16
+40.3  : 8.0e-16
+44.8  : 7.0e-16
+45.4  : 9.0e-16
+49.0  : 4.6e-16
+49.7  : 6.0e-16
+54.5  : 5.5e-16
+\enddata

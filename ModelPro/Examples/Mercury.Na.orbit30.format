@@ -1,0 +1,18 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Format structure
+format.type = los
+format.dr = 0.1
+format.quantity = intensity  ;; intensity, column, density
+format.strength = 1.         ;; This gives source strengh/10^26
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Set up the geometry structure
+geometry.origin = Mercury
+geometry.spacecraft = MESSENGER
+geometry.orbit = 30      ;; Orbit number
+geometry.usedata = 1    ;; Doesn't do anything, I think
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Specify the emission parameters (not needed if computing column density)
+emission.mechanism = resscat
+emission.line = 5891,5897     ;; Ca=4227, Na=5891,5897, Mg=2852

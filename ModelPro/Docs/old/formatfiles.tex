@@ -1,0 +1,53 @@
+\documentclass[11pt]{article}
+\include{noteinclude}
+
+\begin{document}
+\section{Default Formatfiles}
+\begin{enumerate}
+\item Images: These are default files for makeing model images. Replace 'SS' with the 
+species: `Na', `Ca', or `Mg'
+  \begin{itemize}
+  \item \texttt{Mercury.SS.image.xy.wid6.format}: Image of equatorial plane (view from 
+  above north pole) from $\pm3$ \Rmerc\ in each direction.
+  \item \texttt{Mercury.SS.image.xz.wid6.format}: Image of noon-midnight plane (view 
+  from above dawn point) $\pm3$ \Rmerc\ in each direction.
+  \item \texttt{Mercury.SS.image.yz.wid6.format}: Image of Dawn-Dusk plane (view from
+  sun) from $\pm3$ \Rmerc\ in each direction.
+  \end{itemize}
+
+\item MASCS Simulations: These are default files from simulating the MASCS 
+lines-of-sight. Replace `SS' with the species: `Na', `Ca', or `Mg'. Replace `XXXX' with
+the four digit orbit number. Orbit 33 is `0033'.
+  \begin{itemize}
+  \item \texttt{MESSENGER.OrbitXXXX.SS.dphi1.format}: cone with opening 1\degr.
+  \item \texttt{MESSENGER.OrbitXXXX.SS.dphi3.format}: cone with opening 3\degr.
+  \item \texttt{MESSENGER.OrbitXXXX.SS.dr0p05.format}: cylinder of width 0.05 \Rmerc.
+  \item \texttt{MESSENGER.OrbitXXXX.SS.dr0p1.format}: cylinder of width 0.1 \Rmerc.
+  \end{itemize}
+
+\item I can create more default files on request.
+\end{enumerate}
+
+\section{Using these files}
+
+\begin{enumerate}
+\item Basic usage with no changes.
+\begin{verbatim}
+IDL> formatfile = 'MESSENGER.Orbit0022.Ca.dphi3.format'
+IDL> result = produce_results(inputfile, formatfile)
+\end{verbatim}
+It is not necessary to specify the path. If the given formatfile is not found in the
+current directory, the program searches a default path.
+
+\item To make a change:
+\begin{verbatim}
+IDL> formatfile = 'MESSENGER.Orbit0022.Ca.dphi3.format'
+IDL> format = read_resultformat(formatfile)
+IDL> format.geometry.dphi = 1*!dtor  ;; use a 1 degree cone angle
+IDL> result = produce_results(inputfile, format)
+\end{verbatim}
+The function \textit{produce\_results} can take either a file name or a format structure
+as an input.
+\end{enumerate}
+
+\end{document}

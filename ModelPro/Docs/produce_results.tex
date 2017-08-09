@@ -1,0 +1,218 @@
+\documentclass[11pt]{article}
+\include{noteinclude}
+
+\begin{document}
+Last updated: \today
+
+\tableofcontents
+
+\section{produce\_results.pro}
+
+This procedure is the starting point for creating results from model outputs. 
+An input structure or file and a format structure or file are required. The 
+modeloutput files associated with the input file should be created before 
+running this routine. 
+
+The possible result types are: 
+\begin{itemize}
+\item image = 2-D image from a specfied viewing geometry
+\item voronoi image = 2-D image using the voronoi regions method
+\item los = the line-of-sight results along specific spacecraft trajectory and 
+look direction
+\item points = the density sampled at specified points or along a spacecraft 
+trajectory
+\end{itemize}
+
+The quantities that can be determined are:
+\begin{itemize}
+\item Density
+\item Column density
+\item Intensity (multiple excitation processes possible)
+\item Spectrum (simulated spectrum over wavelength range) 
+\end{itemize}
+
+The rest of this section outlines the produce\_results procedure.
+
+\begin{enumerate}
+\item Function call: \texttt{produce\_results, inputtemp, formattemp, 
+  data=data, npackets=npackets, savefile=savefile}
+  \begin{enumerate}
+  \item \texttt{inputtemp} can be:
+    \begin{enumerate}
+    \item an input file that can be restored
+    \item an input structure
+    \item list of output files to restore 
+      \begin{itemize}
+      \item The input structure is determined from the first output file in 
+	the list
+      \item If the input structure is not the same for each output file, the 
+	results will be unpredictable (i.e., wrong).
+      \end{itemize}
+    \end{enumerate}
+  \item \texttt{formattemp} can be:
+    \begin{enumerate}
+    \item a format file that can be restored
+    \item a \hyperref[format]{format structure}
+    \end{enumerate}
+  \item \texttt{data} = points at which to produce results
+    \begin{enumerate}
+    \item if producing LOS results, data is a structure with (x, y, z, xbore, 
+      ybore, zbore)
+    \item if producing density or column density, data is a structure with 
+      (x, y, z)
+    \end{enumerate}
+  \item \texttt{npackets} = minimum number of packets needed to produce a 
+    result (default = 0)
+  \item \texttt{savefile} = file to save the loaded packets into - still 
+    working on this option
+  \end{enumerate}
+
+\item Common block \textit{results} contains: 
+  \begin{enumerate} 
+  \item input = the input structure for this model run
+  \item format = the \hyperref[format]{format structure} for this result
+  \item SystemConsts
+  \item stuff
+  \item gvalue
+  \item plasma = current plasma parameters for the simulation
+  \end{enumerate}
+\item \textit{stuff} structure contains:
+  \begin{enumerate}
+  \item aplanet = distance of planet from the sun (AU)
+  \item vr = radial velocity of planet relative to the sun (km/s)
+  \item atoms\_per\_packet = number of atoms 1.0 packets represents
+  \item mod\_rate = rate packets are ejected from the surface
+  \item totalsource = total number of packets ejected
+  \end{enumerate}
+
+\item Restore the inputs and determine which output files to use 
+
+\item Restore the SystemConsts structure and determine the distance and radial 
+  velocity of the central planet based on input.geometry.taa \\
+  \textbullet\ function calls to {\color{blue}SystemConstants} and 
+  {\color{blue}planet\_dist}
+
+\item Determine \textit{totalpackets} = total number of packets available
+  \begin{enumerate} 
+  \item extracts the number of saved packets from the output file headers and
+  \item If the \textit{npackets} keyword is not set, then $npackets=0$.
+  \item If no output files are found, then $totalpackets = 0$
+  \item If $totalpackets < npackets$ then there is nothing to do. 
+  \end{enumerate}
+
+\item Restore the format structure if the filename is given as an input
+
+\item Determine \textit{stuff.totalsource} by extracting the values from the 
+  output files 
+  \begin{enumerate}
+  \item $totalsource = \sum output.frac0$ \rarrow\ total starting fractional 
+    values for the packets
+  \item $totalpackets$ is the number of packets ignoring the initial fractional 
+    value
+  \end{enumerate}
+
+\item $stuff.mod\_rate = stuff.totalsource / input.options.endtime$ \rarrow\ 
+  packets ejected per second
+
+\item $stuff.atoms\_per\_packet = format.strength \times 10^{26}$ \rarrow\ 
+  number of atoms each packet represents. $fomat.strength$ = source rate in 
+  units of $10^{26}$ atoms/sec.
+
+\item if $format.quantity$ = `intensity', then setup the intensity parameters \\
+  \textbullet\ run procedure 
+  \hyperref[intensitysetup]{results\_intensity\_setup}
+
+\item Run the appropriate results production program based on format.type:
+  \begin{enumerate}
+  \item `image': Create an image from a specified viewing geometry \\
+    \textbullet\ result = 
+    \hyperref[image]{produce\_image(files, savefile=savefile)}
+  \item `voronoi image': Create an image from a specified viewing geometry 
+  using the voronoi region method (still in progress) \\
+    \textbullet\ result = 
+    \hyperref[voronoiimage]{produce\_voronoi\_image(files, savefile=savefile)}
+  \item `los': Determine result along a trajectory line of sight \\
+    \textbullet\ result = \hyperref[los]{produce\_los(files, savefile=savefile)} 
+  \item `points': Determine density at specified points \\ 
+    \textbullet\ result = 
+    \hyperref[points]{produce\_density(files, savefile=savefile)}
+  \end{enumerate}
+\end{enumerate}
+
+\section{Format Structures \label{format}}
+
+\section{results\_intensity\_setup \label{intensitysetup}}
+\begin{enumerate}
+\item procedure is in the file \textit{results\_functions\_4.0.pro}
+\item This routine loads the gvalues and plamsa info for resonant scattering
+and electron impact excitation
+\item Resonant scattering emission:
+  \begin{enumerate}
+  \item format.emission.mechanism must contain 'resscat'
+  \item g-value determined from {\color{blue}get\_gvalue}, which gives the
+  gvalues for specified atom at specified distance from the sun as function of
+  radial velocity. The g-value structure contains:
+    \begin{enumerate}
+    \item species: the emitting atom
+    \item a: distance from sun (AU)
+    \item wavelength: array of emission line wavelengths (\AA)
+    \item v: array of radial velocities relative to the sun (km s$^{-1}$)
+    \item g: ($n_v \times n_\lambda$)-array with g-value as function of $v_r$ 
+    and $\lambda$ (photons atom$^{-1}$ s$^{-1}$)
+    \item radaccel: radiation accelleration as function of $v_r$ (cm s$^{-2}$)
+    \end{enumerate}
+  \end{enumerate}
+\item Electron impact excitation
+  \begin{enumerate}
+  \item format.emission.mechanism must contain 'eimp'
+  \item \textbf{This has not been set up correctly yet.}
+  \end{enumerate}
+\end{enumerate}
+
+\section{produce\_image \label{image}}
+
+This procedure produces a 2-D image from a specified viewing geometry
+\rarrow\ See Section~\ref{format} for required parameters. The user does
+not call this function directly -- it is called from
+{\color{blue}produce\_results}.
+
+The procedure is outlined below:
+\begin{enumerate}
+\item Determine the image origin -- There are some differences in the
+calculations depending on whether the image center is the planet or a
+satellite.
+
+\item Image dimensions:
+  \begin{enumerate}
+  \item Size of the output image (number of pixels) is given by
+  \texttt{format.geometry.dims}
+  \item The image center is given by \texttt{format.geometry.center} measured  
+  in $R_{obj}$ relative to the center of the image origin
+  (\texttt{format.geometry.origin}). 
+  \item The width of the image is given by \texttt{format.geometry.width}
+  measured in $R_{obj}$.
+  \item Note that \texttt{geometry.dims}, \texttt{geometry.width}, and
+  \texttt{geometry.center} are all 2-element vectors.
+  \end{enumerate}
+
+\item Coordinate system
+  \begin{enumerate}
+  \item The packets are rotated into a reference frame with the x-axis aligned
+  along the image horizontal axis, the z-axis aligned along the image vertical
+  axis, and the y-axis along the image line of sight with the observer located
+  at $(0,-\infty,0)$
+  \item Image scale: 
+  \begin{equation}
+  scale = \frac{geometry.width}{geometry.dims-1}
+  \end{equation}
+  \end{enumerate}
+
+\end{enumerate}
+
+\section{produce\_voronoi\_image \label{voronoiimage}}
+
+\section{produce\_los \label{los}}
+
+\section{produce\_points \label{points}}
+
+\end{document}

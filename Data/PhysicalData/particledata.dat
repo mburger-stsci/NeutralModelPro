@@ -1,0 +1,5 @@
+type	: symbol : mass (g) 	: charge 
+proton  : p      : 1.672621d-24 : 1.
+neutron : n	 : 1.6749d-24   : 0.
+electron : e	 : 9.109382d-28 : -1.
+photon : γ       : 0.           : 0.

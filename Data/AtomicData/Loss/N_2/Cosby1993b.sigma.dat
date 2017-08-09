@@ -1,0 +1,26 @@
+Cosby 1993b			// REFERENCE
+Cross Section		   	// DATATYPE 
+Electron Impact		   	// REACTYPE
+1		  	   	// NREAC
+N_2, e -> N, N, 2e   	   	// REACTION
+eV			   	// ENERGY UNITS
+cm-2			   	// CROSS SECTION UNITS
+\begindata
+10	: 0.e-18
+12	: 1.e-18
+13	: 4.e-18
+16	: 20.e-18
+18	: 36.e-18
+20	: 52.e-18
+25	: 87.e-18
+30	: 104.e-18
+40	: 115.e-18
+50	: 123.e-18
+60	: 123.e-18
+80	: 120.e-18
+100	: 116.e-18
+125	: 110.e-18
+150	: 104.e-18
+175	: 99.e-18
+200	: 95.e-18
+\enddata

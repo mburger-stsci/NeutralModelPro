@@ -1,0 +1,49 @@
+\documentclass[11pt]{article}
+\include{noteinclude}
+
+\begin{document}
+\section{modeloutput\_search.pro}
+
+\begin{compactenum}
+\item This program searches through the available modeloutput files for ones 
+that best match the input set. Not all the parameters need to be exact:
+  \begin{compactenum}[(a)]
+  \item \texttt{geometry.taa}: $< 3.0$\degr
+  \item \texttt{geometry.phi}: $< 3.0$\degr
+  \item \texttt{options.lifetime}: $< 5\%$
+  \item \texttt{options.endtime}: $< 5\%$
+  \item \texttt{speeddist.temperature}: $<1$\degr
+  \item \texttt{options.outeredge}: $< 5\%$
+  \item \texttt{spatialdist.longitude}: $<1$\degr
+  \item \texttt{spatialdist.latitude}: $<1$\degr
+  \item \texttt{sticking\_info.accom\_factor}: $<0.01$
+  \item \texttt{sticking\_info.stickcoef}: $< 0.01$
+  \item \texttt{spatialdist.kappa}: $<0.1$
+\item \texttt{spatialdist.diffusionlimit}: $<0.01$
+\end{compactenum}
+
+\item Calling procedure: \\
+\texttt{IDL> files = modeloutput\_search(input, verbose=verbose, nfile=nfiles)}
+  \begin{compactenum}
+  \item \texttt{input} can be either an inputfile or an input structure
+  \item \texttt{verbose} = 1/0 turns on verbosity. Default = 0
+  \item \texttt{nfiles} = number of output files found
+  \end{compactenum}
+\end{compactenum}
+
+\subsection{Program method}
+\begin{compactenum}
+\item Searches for potential files:
+  \begin{compactenum}
+  \item Determines the path with \texttt{output\_filename}
+  \item finds all the files in that path
+  \end{compactenum}
+\item For each outputfile it finds, goes through and checks to see if the saved input
+structure in the outputfile matches the required input
+  \begin{compactenum}
+  \item Restores the \textit{input} structure from the outputfile
+  \item Quick check: 
+
+
+
+\end{document}

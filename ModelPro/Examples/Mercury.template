@@ -1,0 +1,94 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Planet Geometry Information
+geometry.planet = Mercury
+geometry.taa = 0.    ;; radians
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Surface Sticking Information
+;; (a) Complete Surface Sticking
+sticking_info.StickCoef = 1
+
+;; (b) No Thermal Accommodation
+sticking_info.StickCoef = 0   ;; 0 <= S < 1
+sticking_info.emitfn = elastic scattering
+
+;; (c) Partial Thermal Accommodation
+sticking_info.StickCoef = 0   ;; 0 <= S < 1
+sticking_info.emitfn = Maxwellian
+sticking_info.accom_factor = 1 ;; 0 < alpha <= 1
+sticking_info.Tsurf = 0    ;; Tsurf = 0 -> use temperature map
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Forces
+forces.gravity = 1
+forces.radpres = 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Spatial Distribution
+;; (a) Surface distribution - no mapfile given
+SpatialDist.type = surface
+SpatialDist.use_map = 0
+SpatialDist.exobase = 1.
+SpatialDist.longitude0 = 0.     ;; Radians
+SpatialDist.longitude1 = 6.283  ;; Radians
+SpatialDist.latitude0 = -1.571  ;; Radians
+SpatialDist.latitude1 = 1.571   ;; Radians
+
+;; (b) Surface Distribution - mapfile given
+SpatialDist.type = surface
+SpatialDist.use_map = 1
+SpatialDist.mapfile = mapfile.sav
+SpatialDist.exobase = 1.
+
+;; (c) Start from a spherically symmetric exosphere 
+;; powerlaw: n ~ r^b
+;; exponential: n ~ exp((-r-1)/b)
+SpatialDist.type = exosphere
+SpatialDist.exotype = powerlaw   ;; or exponential 
+SpatialDist.b = -2               ;; powerlaw exponent or scale height (in R_plan)
+SpatialDist.rmax = 10            ;; cutoff distance in R_plan
+SpatialDist.block_shadow = 1     ;; 1 = no source in shadow
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Speed distribution
+;; (a) sputtering
+;; f(v) ~ E^beta / (E + U)^alpha
+SpeedDist.type = sputtering
+SpeedDist.U = 2
+SpeedDist.alpha = 3
+SpeedDist.beta = 1
+
+;; (b) Maaxwellian
+SpeedDist.type = maxwellian
+SpeedDist.temperature = 2000.  ;; K
+
+;; (c) Thermal at local surface temperature
+SpeedDist.type = thermal
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Angular distribution
+;; (a) Radial
+AngularDist.type = radial
+
+;; (b) Isotropic
+AngularDist.type = isotropic
+AngularDist.altitude0 = 0      ;; in radians, 0=tangent to surface
+AngularDist.altitude1 = 1.571  ;; pi/2=normal to surface
+
+;; (c) costheta -- f(theta)~cos(theta)^n (peaked at normal to surface)
+AngularDist.type = costheta 
+AngularDist.n = 1
+AngularDist.altitude0 = 0      ;; in radians, 0=tangent to surface
+AngularDist.altitude1 = 1.571  ;; pi/2=normal to surface
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Perturbation velocity
+PerturbVel.type = none
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Set the run options
+options.endtime = 36000.   ;; seconds -- use MercuryModelEndTime to get proper time
+options.atom = Na
+options.fullsystem = 0
+options.outer_edge = 15
+options.trackloss = 1

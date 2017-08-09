@@ -1,0 +1,35 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Format structure
+format.type = los
+format.dr = 0.1
+format.quantity = intensity  ;; intensity, column, density
+format.strength = 1.         ;; This gives source strengh/10^26
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Set up the geometry structure
+;; (a) Orbit number
+geometry.origin = Mercury
+geometry.spacecraft = MESSENGER
+geometry.orbit = 0      ;; Orbit number
+geometry.usedata = 1    ;; Doesn't do anything, I think
+
+;; (b) Time period
+;;geometry.origin = Mercury
+;;geometry.spacecraft = MESSENGER
+;;geometry.tstart = 2011-04-01T00:00:00  ;; start time in ISOC format
+;;geometry.tend = 2011-04:01:T06:00:00   ;; end time in ISOC format
+;;geometry.usedata = 1
+
+;; (c) Viewing geometry 
+;;geometry.origin = Mercury 
+;;geometry.dims = 500,500    ;; image dimensions in pixels
+;;geometry.width = 5,5       ;; image width in object radii
+;;geometry.center = 0,0      ;; displacement of image center from object center
+;;geometry.phaseanglongitude = 0 ;; longitude,latitude of the sub-observer pt
+;;geometry.phaseanglatitude = 0  
+;;geometry.PolarAngle
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Specify the emission parameters (not needed if computing column density)
+emission.mechanism = resscat
+emission.line = 5891,5897     ;; Ca=4227, Na=5891,5897, Mg=2852

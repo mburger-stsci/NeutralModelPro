@@ -1,0 +1,44 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Planet Geometry Information
+geometry.planet = Mercury
+geometry.taa = 1.6087261    ;; radians
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Surface Sticking Information
+sticking_info.StickCoef = 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Forces
+forces.gravity = 1
+forces.radpres = 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Spatial Distribution
+SpatialDist.type = surface
+SpatialDist.use_map = 0
+SpatialDist.exobase = 1.
+SpatialDist.longitude0 = 0.     ;; Radians
+SpatialDist.longitude1 = 6.283  ;; Radians
+SpatialDist.latitude0 = -1.571  ;; Radians
+SpatialDist.latitude1 = 1.571   ;; Radians
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Speed distribution
+SpeedDist.type = maxwellian
+SpeedDist.temperature = 20000.  ;; K
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Angular distribution
+AngularDist.type = isotropic
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Perturbation velocity
+PerturbVel.type = none
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Set the run options
+options.endtime = 94330  ;; seconds -- use MercuryModelEndTime to get proper time
+options.atom = Na
+options.fullsystem = 0
+options.outer_edge = 15
+options.trackloss = 1

@@ -1,0 +1,14 @@
+Berezhnoy 2013		// REFERENCE
+Rate Coeficient			// DATATYPE
+Photo 				// REACTYPE
+s-1				// RATECOEFUNITS	
+Estimates of photolysis lifetimes for a few metalic oxides // NOTE
+Extract this data to individual structures with 'extract_Berez_data.pro'
+\begindata
+CaO    	: CaO, photon -> Ca, O		: 0.00250000
+CaOH	: CaOH, photon -> CaO, H 	: 0.00166667
+CaOH	: CaOH, photon -> Ca, OH	: 0.0025
+Ca=OH=_2 : Ca=OH=_2, photon -> CaOH, OH	: 0.000500000
+\enddata
+
+

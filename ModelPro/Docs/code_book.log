@@ -1,0 +1,3199 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.7)  1 AUG 2012 15:11
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**code_book.tex
+(./code_book.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2011-07-01, ngerman-x-2011-07-01, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nyn
+orsk, polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbia
+nc, slovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorb
+ian, welsh, loaded.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+\@input{noteinclude.aux}
+\openout2 = `noteinclude.aux'.
+
+(/Users/mburger/Library/texmf/tex/latex/noteinclude.tex
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks15
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count99
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/02/28 v6.82p Hypertext links for LaTeX
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen112
+\Hy@linkcounter=\count100
+\Hy@pagecounter=\count101
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/02/28 v6.82p Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count102
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 3941.
+Package hyperref Info: Hyper figures OFF on input line 4062.
+Package hyperref Info: Link nesting OFF on input line 4067.
+Package hyperref Info: Hyper index ON on input line 4070.
+Package hyperref Info: Plain pages OFF on input line 4077.
+Package hyperref Info: Backreferencing OFF on input line 4082.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4300.
+\c@Hy@tempcnt=\count103
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4653.
+\Fld@menulength=\count104
+\Field@Width=\dimen113
+\Fld@charsize=\dimen114
+Package hyperref Info: Hyper figures OFF on input line 5773.
+Package hyperref Info: Link nesting OFF on input line 5778.
+Package hyperref Info: Hyper index ON on input line 5781.
+Package hyperref Info: backreferencing OFF on input line 5788.
+Package hyperref Info: Link coloring ON on input line 5791.
+Package hyperref Info: Link coloring with OCG OFF on input line 5798.
+Package hyperref Info: PDF/A mode OFF on input line 5803.
+LaTeX Info: Redefining \ref on input line 5843.
+LaTeX Info: Redefining \pageref on input line 5847.
+\Hy@abspage=\count105
+\c@Item=\count106
+\c@Hfootnote=\count107
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/02/28 v6.82p Hyperref driver for pdfTeX
+\Fld@listcount=\count108
+\c@bookmark@seq@number=\count109
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip46
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen115
+\Gin@req@width=\dimen116
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/eurosym/eurosym.sty
+Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
+\@eurobox=\box28
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
+\symwasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
+\pltopsep=\skip47
+\plpartopsep=\skip48
+\plitemsep=\skip49
+\plparsep=\skip50
+\pl@lab=\toks20
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip51
+\bibsep=\skip52
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count110
+))
+(./code_book.aux)
+\openout1 = `code_book.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+
+(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count111
+\scratchdimen=\dimen117
+\scratchbox=\box29
+\nofMPsegments=\count112
+\nofMParguments=\count113
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen118
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
+\everyMPtoPDFconversion=\toks22
+)
+\AtBeginShipoutBox=\box30
+Package hyperref Info: Link coloring ON on input line 11.
+ (/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count117
+)
+LaTeX Info: Redefining \ref on input line 11.
+LaTeX Info: Redefining \pageref on input line 11.
+LaTeX Info: Redefining \nameref on input line 11.
+
+(./code_book.out) (./code_book.out)
+\@outlinefile=\write3
+\openout3 = `code_book.out'.
+
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+[1
+
+
+
+{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./code_book.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 1.
+ (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 1.
+ (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+wasy on input line 1.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+) [2
+
+] [3]
+[4])
+\tf@toc=\write4
+\openout4 = `code_book.toc'.
+
+ (./code_book.lot [5]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 3.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+))
+\tf@lot=\write5
+\openout5 = `code_book.lot'.
+
+ (./code_book.lof)
+\tf@lof=\write6
+\openout6 = `code_book.lof'.
+
+ [6]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 34.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 34.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 34.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 34.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchar' on input line 34.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 34.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 34.
+
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 36.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 52.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--74
+
+ []
+
+
+LaTeX Warning: Reference `figure:gval' on page 7 undefined on input line 79.
+
+[7
+
+] [8]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 111.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 111.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 111.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 111.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchar' on input line 111.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 111.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 111.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+
+Overfull \hbox (22.62286pt too wide) in paragraph at lines 143--146
+[]\T1/cmr/m/n/10.95 The val-ues used in this rou-tine are saved in the files \T
+1/cmtt/m/n/10.95 Data/PhysicalData/PlanetaryConstants.dat
+ []
+
+[9
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 158.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 158.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 158.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 158.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchar' on input line 158.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 158.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 158.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
+
+ []
+
+
+Overfull \hbox (10.19908pt too wide) in alignment at lines 211--229
+ [][][] []
+ []
+
+[10
+
+]
+Overfull \hbox (27.43033pt too wide) in paragraph at lines 238--241
+[]\T1/cmr/m/n/10.95 If spec-i-fy-ing Time and Ob-server lo-ca-tion, then $[]$ a
+nd $[]$ are de-ter-mined with \T1/cmtt/m/n/10.95 relative_position
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
+
+ []
+
+[12
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
+ []
+
+[13
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+
+ []
+
+[14
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
+
+ []
+
+[15
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
+
+ []
+
+[16
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
+
+ []
+
+[17
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--374
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--380
+
+ []
+
+[18
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
+
+ []
+
+[19
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--419
+
+ []
+
+[20
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+[21
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 444--445
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 446--447
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 450--451
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 452--453
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
+
+ []
+
+[22
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
+
+ []
+
+[23
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--495
+
+ []
+
+[24
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 505--506
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--508
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 509--510
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--514
+
+ []
+
+[25
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 520--521
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 522--523
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--525
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--527
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 528--529
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
+
+ []
+
+[26
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 540--541
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--545
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 548--549
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 550--551
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 552--553
+
+ []
+
+[27
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--564
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 565--566
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 567--568
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 569--570
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 571--572
+
+ []
+
+[28
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 576.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 576.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 576.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 576.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchar' on input line 576.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 576.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 576.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 585--586
+
+ []
+
+
+Overfull \hbox (37.75659pt too wide) in paragraph at lines 589--591
+[]\T1/cmr/m/n/10.95 magcoords = mag-netic co-or-di-nate struc-ture (which in-cl
+udes out_of_shadow). See [][]xyz_to_magcoord[][]. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 605--606
+
+ []
+
+
+Overfull \hbox (49.5789pt too wide) in paragraph at lines 611--614
+[]\T1/cmr/m/n/10.95 The in-put struc-ture fields \T1/cmtt/m/n/10.95 input.Force
+s.gravity\T1/cmr/m/n/10.95 , \T1/cmtt/m/n/10.95 input.Forces.radpres\T1/cmr/m/n
+/10.95 , and \T1/cmtt/m/n/10.95 input.Forces.Lorentz
+ []
+
+[29
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 624.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 624.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 624.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 624.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchar' on input line 624.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 624.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 624.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 632--633
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 642--643
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--649
+
+ []
+
+[30
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--681
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 682--683
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 686--687
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
+
+ []
+
+[31
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 693.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 693.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 693.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 693.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchar' on input line 693.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 693.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 693.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 701--702
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--717
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 751--752
+
+ []
+
+[32
+
+] <figures/radaccel.png, id=628, 752.93295pt x 451.80795pt>
+File: figures/radaccel.png Graphic file (type png)
+
+<use figures/radaccel.png>
+Package pdftex.def Info: figures/radaccel.png used on input line 760.
+(pdftex.def)             Requested size: 469.75499pt x 281.8898pt.
+ [33] [34 <./figures/radaccel.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 774--775
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 776--777
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 778--779
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 780--781
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 782--783
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 784--785
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 786--787
+
+ []
+
+[35
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 796--797
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 798--799
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 800--801
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 802--803
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 804--806
+
+ []
+
+[36
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 840--841
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 847--848
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 849--850
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 851--852
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 853--854
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 855--856
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 857--858
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 859--860
+
+ []
+
+[38
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 866--867
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 868--869
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 870--871
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 872--873
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 874--875
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 876--877
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 878--879
+
+ []
+
+[39
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 885--886
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 887--888
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 889--890
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 891--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 893--894
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 895--896
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 897--898
+
+ []
+
+[40
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 904--905
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 906--907
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 908--909
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 910--911
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 912--913
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 914--915
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 916--917
+
+ []
+
+[41
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 923--924
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 925--926
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 927--928
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 929--930
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 931--932
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 933--934
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--936
+
+ []
+
+[42
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 942--943
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 944--945
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 946--947
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 948--949
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 950--951
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 952--953
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 954--955
+
+ []
+
+[43
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 962--963
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 964--965
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 966--967
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 968--969
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 970--971
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--973
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 974--975
+
+ []
+
+[44
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 979.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 979.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 979.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 979.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchar' on input line 979.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 979.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 979.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 989--990
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 999--1000
+
+ []
+
+[45
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1017--1018
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1019--1020
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1021--1022
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1023--1024
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1027--1028
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1029--1030
+
+ []
+
+[46
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1036--1037
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1038--1039
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1041
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1042--1043
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1044--1045
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1046--1047
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1048--1049
+
+ []
+
+[47
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1056--1057
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1058--1059
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1061
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1062--1063
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1064--1065
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1066--1067
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1068--1069
+
+ []
+
+[48
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1076
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1077--1078
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1079--1080
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1081--1082
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1083--1084
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1086
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1087--1088
+
+ []
+
+[49
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1094--1095
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1096--1097
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1098--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1100--1101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1104--1105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1106--1107
+
+ []
+
+[50
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1113--1114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1115--1116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1117--1118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1123--1124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1125--1126
+
+ []
+
+[51
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1132--1133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1134--1135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1136--1137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1138--1139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1140--1141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1142--1143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1144--1145
+
+ []
+
+[52
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1151--1152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1153--1154
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1155--1156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1157--1158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1161--1162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1163--1164
+
+ []
+
+[53
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1170--1171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1172--1173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1174--1175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1176--1177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1178--1179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1180--1181
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1182--1183
+
+ []
+
+[54
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1187.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1187.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 1187.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 1187.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchar' on input line 1187.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1187.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1187.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1195--1196
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1200--1201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1205--1206
+
+ []
+
+[55
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1222--1223
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1224--1225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1226--1227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1228--1229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1230--1231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1232--1233
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1234--1235
+
+ []
+
+[56
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1242--1243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1244--1245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1246--1247
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1248--1249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1250--1251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1252--1253
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1254--1255
+
+ []
+
+[57
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1261--1262
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1263--1264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1265--1266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1267--1268
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1269--1270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1271--1272
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1273--1274
+
+ []
+
+[58
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1280--1281
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1282--1283
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1284--1285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1286--1287
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1288--1289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1290--1291
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1292--1293
+
+ []
+
+[59
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1300--1301
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1302--1303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1304--1305
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1306--1307
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1308--1309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1310--1311
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1312--1313
+
+ []
+
+[60
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1326--1327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1334--1335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1340--1341
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1346--1347
+
+ []
+
+[61
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1387--1388
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1389--1390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1391--1392
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1393--1394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1395--1396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1397--1398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1399--1400
+
+ []
+
+[62
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1407--1408
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1409--1410
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1411--1412
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1413--1414
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1415--1416
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1417--1418
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1419--1420
+
+ []
+
+[63
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1426--1427
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1428--1429
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1430--1431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1432--1433
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1434--1435
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1436--1437
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1438--1439
+
+ []
+
+[64
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1443.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1443.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 1443.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 1443.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchar' on input line 1443.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1443.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1443.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1454--1455
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1461--1462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1466--1467
+
+ []
+
+
+LaTeX Warning: Hyper reference `sec:angular_distribution' on page 65 undefined 
+on input line 1475.
+
+
+LaTeX Warning: Hyper reference `sec:add_perturbation' on page 65 undefined on i
+nput line 1476.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1489--1490
+
+ []
+
+
+Overfull \hbox (1.64516pt too wide) in paragraph at lines 1498--1501
+[]\T1/cmr/m/n/10.95 Set the ini-tial lo-ca-tions for pack-ets. Pos-si-ble dis-t
+ri-bu-tions al-lowed in \T1/cmtt/m/n/10.95 input.SpatailDist.type
+ []
+
+
+LaTeX Warning: Hyper reference `sece:surface_distribution' on page 65 undefined
+ on input line 1503.
+
+
+Overfull \hbox (35.48503pt too wide) in paragraph at lines 1507--1510
+[]\T1/cmr/m/it/10.95 exosphere\T1/cmr/m/n/10.95 : starts all the pack-ets in an
+ ex-o-sphere over the sur-face of \T1/cmtt/m/n/10.95 input.geometry.startpoint
+ []
+
+[65
+
+]
+Overfull \hbox (16.25818pt too wide) in paragraph at lines 1510--1512
+[]\T1/cmr/m/it/10.95 SO2 ex-o-sphere\T1/cmr/m/n/10.95 : Uses Vin-cent Dol's ex-
+o-spheric source model. See [][]SO2exosphere_distribution[][] 
+ []
+
+
+LaTeX Warning: Hyper reference `sec:angular_distribution' on page 66 undefined 
+on input line 1528.
+
+
+Overfull \hbox (33.04153pt too wide) in paragraph at lines 1527--1534
+\T1/cmr/m/n/10.95 sys-tem cen-tered on \T1/cmtt/m/n/10.95 input.geometry.startp
+oint\T1/cmr/m/n/10.95 . A trans-for-ma-tion to the \T1/cmtt/m/n/10.95 input.geo
+metry.planet\T1/cmr/m/n/10.95 -
+ []
+
+
+LaTeX Warning: Hyper reference `sec:add_perturbation' on page 66 undefined on i
+nput line 1536.
+
+
+Overfull \hbox (71.25476pt too wide) in paragraph at lines 1538--1541
+[]\T1/cmr/m/n/10.95 Make the con-ver-sion from the \T1/cmtt/m/n/10.95 input.geo
+metry.startpoint\T1/cmr/m/n/10.95 -centered sys-tem to the \T1/cmtt/m/n/10.95 i
+nput.geometry.planet\T1/cmr/m/n/10.95 -
+ []
+
+[66] [67]
+Underfull \hbox (badness 10000) in paragraph at lines 1591--1592
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1593--1594
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1595--1596
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1597--1598
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1599--1600
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1601--1602
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1603--1604
+
+ []
+
+[68
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1610--1611
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1612--1613
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1614--1615
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1616--1617
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1618--1619
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1620--1621
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1622--1623
+
+ []
+
+[69
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1637--1638
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1647--1648
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1653--1654
+
+ []
+
+
+LaTeX Warning: Reference `sec:coordsystems' on page 70 undefined on input line 
+1680.
+
+[70
+
+] [71] <figures/surfdist0.png, id=909, 96.36pt x 120.45pt>
+File: figures/surfdist0.png Graphic file (type png)
+
+<use figures/surfdist0.png>
+Package pdftex.def Info: figures/surfdist0.png used on input line 1778.
+(pdftex.def)             Requested size: 469.75499pt x 587.28964pt.
+
+
+LaTeX Warning: Float too large for page by 3.38884pt on input line 1788.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[72] [73 <./figures/surfdist0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1796--1797
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1798--1799
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1800--1801
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1802--1803
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1804--1805
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1806--1807
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1808--1809
+
+ []
+
+[74
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1816--1817
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1818--1819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1820--1821
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1822--1823
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1824--1825
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1826--1827
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1828--1829
+
+ []
+
+[75
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1835--1836
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1837--1838
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1839--1840
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1841--1842
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1843--1844
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1845--1846
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1847--1848
+
+ []
+
+[76
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1852.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1852.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 1852.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 1852.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchar' on input line 1852.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1852.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1852.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1861--1862
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1870--1871
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1884--1885
+
+ []
+
+[77
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1909.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1909.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 1909.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 1909.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchar' on input line 1909.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1909.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1909.
+
+[78
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1955--1956
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1957--1958
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1959--1960
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1961--1962
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1963--1964
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1965--1966
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1967--1968
+
+ []
+
+[79
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1974--1975
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1976--1977
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1978--1979
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1980--1981
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1982--1983
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1984--1985
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1986--1987
+
+ []
+
+[80
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1993--1994
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1995--1996
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1997--1998
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1999--2000
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2001--2002
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2003--2004
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2005--2006
+
+ []
+
+[81
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 2012--2013
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2016--2017
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2018--2019
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2020--2021
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2022--2023
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2024--2025
+
+ []
+
+[82
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 2031--2032
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2033--2034
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2035--2036
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2037--2038
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2040
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2041--2042
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2043--2044
+
+ []
+
+[83
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 2050--2051
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2052--2053
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2054--2055
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2056--2057
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2058--2059
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2060--2061
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2062--2063
+
+ []
+
+[84
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2067.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2067.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 2067.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 2067.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchar' on input line 2067.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2067.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2067.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2076--2077
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2083--2084
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2093--2094
+
+ []
+
+[85
+
+] [86] [87
+
+]
+
+LaTeX Warning: Reference `table:deposition' on page 88 undefined on input line 
+2180.
+
+
+LaTeX Warning: Reference `table:lossinfo' on page 88 undefined on input line 21
+82.
+
+
+Overfull \hbox (15.81105pt too wide) in paragraph at lines 2153--2185
+[][] 
+ []
+
+[88]
+Overfull \hbox (37.1708pt too wide) in paragraph at lines 2193--2218
+[][] 
+ []
+
+[89] [90]
+Overfull \hbox (40.4624pt too wide) in paragraph at lines 2245--2280
+[][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2285.
+[91]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2285.
+ (./code_book.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2285.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2285.
+
+Package rerunfilecheck Info: File `code_book.out' has not changed.
+(rerunfilecheck)             Checksum: F9414620CF6A9AD7BCC45827CA6BFB18;5210.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2285.
+ ) 
+Here is how much of TeX's memory you used:
+ 7376 strings out of 493610
+ 102150 string characters out of 3142405
+ 195364 words of memory out of 3000000
+ 10219 multiletter control sequences out of 15000+200000
+ 28417 words of font info for 79 fonts, out of 3000000 for 9000
+ 831 hyphenation exceptions out of 8191
+ 33i,12n,31p,558b,583s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
+sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
+/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
+ocal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
+al/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
+xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texli
+ve/2011/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/t
+exlive/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texli
+ve/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive
+/2011/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2
+011/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/201
+1/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2011/
+texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2011/te
+xmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on code_book.pdf (91 pages, 1044617 bytes).
+PDF statistics:
+ 1162 PDF objects out of 1200 (max. 8388607)
+ 1037 compressed objects within 11 object streams
+ 338 named destinations out of 1000 (max. 500000)
+ 563 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,35 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Setup}{}% 2
+\BOOKMARK [1][-]{section.3}{Input Files}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{geometry}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{sticking\137info}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{forces}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{SpatialDist}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.5}{SpeedDist}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.6}{AngularDist}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.7}{PerturbVel}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.8}{plasma\137info}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.9}{options}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Outputs}{}% 13
+\BOOKMARK [1][-]{section.5}{Using the Model}{}% 14
+\BOOKMARK [2][-]{subsection.5.1}{Running the Model}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.2}{Looking at the Results}{section.5}% 16
+\BOOKMARK [1][-]{section.6}{Physics and Computational Section}{}% 17
+\BOOKMARK [2][-]{subsection.6.1}{Coordinate Systems}{section.6}% 18
+\BOOKMARK [2][-]{subsection.6.2}{Common blocks}{section.6}% 19
+\BOOKMARK [2][-]{subsection.6.3}{modeldriver}{section.6}% 20
+\BOOKMARK [2][-]{subsection.6.4}{driver }{section.6}% 21
+\BOOKMARK [2][-]{subsection.6.5}{Choosing Points from Distribtuion Functions}{section.6}% 22
+\BOOKMARK [3][-]{subsubsection.6.5.1}{Choosing Random Numbers}{subsection.6.5}% 23
+\BOOKMARK [2][-]{subsection.6.6}{Choosing values from a 1D distribution}{section.6}% 24
+\BOOKMARK [1][-]{section.7}{Appendix A: Directory Structure}{}% 25
+\BOOKMARK [1][-]{section.8}{Appendix B: Inputfile Summary}{}% 26
+\BOOKMARK [2][-]{subsection.8.1}{Geometry}{section.8}% 27
+\BOOKMARK [2][-]{subsection.8.2}{Sticking\137Info}{section.8}% 28
+\BOOKMARK [2][-]{subsection.8.3}{Forces}{section.8}% 29
+\BOOKMARK [2][-]{subsection.8.4}{SpatialDist}{section.8}% 30
+\BOOKMARK [2][-]{subsection.8.5}{SpeedDist}{section.8}% 31
+\BOOKMARK [2][-]{subsection.8.6}{AngularDist}{section.8}% 32
+\BOOKMARK [2][-]{subsection.8.7}{PerturbVel}{section.8}% 33
+\BOOKMARK [2][-]{subsection.8.8}{plasma\137info}{section.8}% 34
+\BOOKMARK [2][-]{subsection.8.9}{options}{section.8}% 35

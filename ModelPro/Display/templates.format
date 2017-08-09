@@ -1,0 +1,34 @@
+
+;; Example for a 2D image
+geometry = {$
+  origin:'Io', $
+  center:[0.,0.], $   ;; / These describe the 2D image 
+  width:[20.,20.], $  ;; | field of view, size, 
+  dims:[501,501], $   ;; | and rotation
+  PolarAngle:0*!dtor, $  ;; \
+  PhaseAngLongitude:0d, $    ;; / These describe the
+  PhaseAngLatitude:!dpi/2} ;; \ direction observer looks from
+
+format = {$
+  type:'image', $
+  quantity:'column', $
+  strength:1., $
+  geometry:geometry}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+geometry = {$
+  spacecraft:'MESSENGER', $
+  tstart:'', $
+  tend:'', $
+  dt:60., $
+  usedata:1, $
+  orbit:10}
+
+format = {$
+  type:'los', $
+  quantity:'intensity', $
+  strength:1., $
+  geometry:geometry}
+
+

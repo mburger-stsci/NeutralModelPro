@@ -1,0 +1,66 @@
+\documentclass[11pt]{article}
+\include{noteinclude}
+
+\begin{document}
+Last updated: \today
+
+\begin{enumerate}
+
+\item This file:  \\
+\texttt{BurgerModel/Docs/quick\_mercury\_procedure.pdf}
+
+\item \textbf{IMPORTANT:} All angles are given in radians. This includes
+longitudes, latitudes, and TAA.
+
+\item Create input file: 
+  \begin{enumerate}
+  \item look at \\
+  \texttt{/Users/mburger/Work/NeutralModel/modelpro\_2.0/Docs/Mercury.template}
+  \item To determine model endtime: \\
+  \verb: IDL> print, MercuryModelEndTime(atom,taa): \\
+  \textbullet\ Gives $4\times$ the photoionization rate in seconds. 
+  \end{enumerate}
+
+\item Run the model: \\
+  \verb:IDL> model_driver, inputfiles, npackets:
+  \begin{enumerate}
+  \item inputfiles = list of inputfiles to run -- as many as you want
+  \item npackets = minimum number of packets in the end result (I generally set
+  this to \texttt{1e7})
+  \end{enumerate}
+
+\item Create the format structure. Look at: \\
+  \texttt{/Users/mburger/Work/NeutralModel/modelpro\_2.0/Docs/MASCS.format}
+
+\item Compute the model result: \\
+  \verb:IDL> result = produce_results(inputfile, format): \\
+  \verb:IDL> result = *result.radiance/1000:\\
+  This gives the radiance in kR.
+
+\item Load MASCS Data: \\
+  \verb:IDL> data = load_MASCS_data(species, orbitnum, [phase], /Level3): or \\
+  \verb:IDL> data = load_MASCS_data(species, tstart, tend, /Level3):
+  \begin{enumerate}
+  \item For the flybys:
+     \begin{itemize}
+     \item \texttt{orbit} = -1,-2,-3 for M1,M2,M3.
+     \item \texttt{phase} = tail, sweep, night, pole-north, pole-south
+     \end{itemize}
+  \item For orbit, ignore \texttt{phase}
+  \item \texttt{tstart}, \texttt{tend} = 'YYYY-MM-DDTHH:MM:SS.S' or
+  'YYYY-DOYTHH:MM:SS.S'
+  \item Data is a structure containing:
+    \begin{itemize}
+    \item Species
+    \item ET = ephemeris time
+    \item radiance = radiance in kR
+    \item sigma = uncertainty in kR
+    \item x, y, z = MSO s/c position in \Rmerc
+    \item xbore, ybore, zbore = MSO boresight look direction in \Rmerc
+    \item file = original CDR file for each point
+    \end{itemize}
+  \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
