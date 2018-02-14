@@ -25,7 +25,7 @@ defsysv, '!model', exists=e
 
 if (e) $
   then file = !model.basepath + 'Data/PhysicalData/PlanetaryConstants.dat' $
-  else file = '$HOME/Data/PhysicalData/PlanetaryConstants.dat'
+  else file = '/Users/mburger/Work/Research/ModelPro/ModelPro/Data/PhysicalData/PlanetaryConstants.dat'
 if ~(file_test(file)) then stop
 
 readcol, file, /silent, skip=5, delim=':', $

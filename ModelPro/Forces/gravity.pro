@@ -6,7 +6,7 @@ function gravity, loc, input
 ;;
 ;; Equations of motion:
 ;;   dvxdt = sum_objects (GM * (x-x_obj))/(r_obj)^3
-;;   dvydt = sum_objects (GM * (y-y_obj))/(r_obj)^3 
+;;   dvydt = sum_objects (GM * (y-y_obj))/(r_obj)^3
 ;;   dvzdt = sum_objects (GM * (z-z_obj))/(r_obj)^3
 ;;     -- r_obj = sqrt( (x-x_obj)^2 + (y-y_obj)^2 + (z-z_obj)^2 )
 ;;     -- radiation pressure only valid for Na
@@ -17,16 +17,16 @@ function gravity, loc, input
 ;;    * put which into stuff structure
 ;;    * using input structure rather than geometry and options separately
 ;;  3.0 - 7/20/2010
-;;    * Small upgrade 
+;;    * Small upgrade
 ;;  2.0 - 10/22/08
 ;;    * Created file from accel.pro
-;; 
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 common constants
 
 n = (size(*loc.x))[1]
-ct = n_elements(*stuff.which) ;; number of objects 
+ct = n_elements(*stuff.which) ;; number of objects
 
 ;; Determine positions of satellites for each packet
 locmoon, input, *loc.t, x=xsat, y=ysat, z=zsat
@@ -37,7 +37,7 @@ jj = replicate(1.,n)
 
 xdiff = (*loc.x)[*,0]#ii - xsat
 ydiff = (*loc.x)[*,1]#ii - ysat
-zdiff = (*loc.x)[*,2]#ii - zsat 
+zdiff = (*loc.x)[*,2]#ii - zsat
 r3 = (xdiff^2 + ydiff^2 + zdiff^2)^1.5
 
 ;; Compute gravitational acceleration
@@ -58,7 +58,8 @@ accel[*,0] = ax
 accel[*,1] = ay
 accel[*,2] = az
 
+aa = sqrt(total(accel^2, 2))
+
 return, accel
 
 end
-

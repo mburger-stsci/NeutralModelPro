@@ -37,6 +37,8 @@ arad = out_of_shadow * gg
 n = (size(*loc.x))[1]
 accel = dblarr(n,3)
 accel[*,1] = arad
+print, mean(gg)
+stop
 
 return, accel
 

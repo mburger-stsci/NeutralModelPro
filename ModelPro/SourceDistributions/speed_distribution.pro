@@ -67,14 +67,14 @@ case strlowcase(SpeedDist.type) of
       prob = dindgen(np)/(np-1)
       vgrid = dblarr(nt,np)
       for i=0,nt-1 do begin
-	;; Produces the velocity as fn of T and cumulative value.
-	;; Given T and random P, can get v
-	vrange = dindgen(np)/(np-1)*v_temp[i]*3.
-	f_v = MaxwellianDist(vrange, temperature[i], input.options.atom)
-	sumdist = f_v
-	for j=1,np-1 do sumdist[j] += sumdist[j-1]
-	sumdist /= max(sumdist)
-	vgrid[i,*] = interpol(vrange, sumdist, prob)
+        ;; Produces the velocity as fn of T and cumulative value.
+        ;; Given T and random P, can get v
+        vrange = dindgen(np)/(np-1)*v_temp[i]*3.
+        f_v = MaxwellianDist(vrange, temperature[i], input.options.atom)
+        sumdist = f_v
+        for j=1,np-1 do sumdist[j] += sumdist[j-1]
+        sumdist /= max(sumdist)
+        vgrid[i,*] = interpol(vrange, sumdist, prob)
       endfor
       p = random_nr(seed=seed, npack)
       *output.vx0 = interpolate_xy(vgrid, temperature, prob, surftemp, p)

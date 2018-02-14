@@ -32,16 +32,16 @@ if (input.options.lifetime GT 0) $    ;;; Explicitly set
       'Earth': 
       'Mars': 
       'Jupiter': begin
-	JupiterPlasma, loc, *magcoord.M, *magcoord.zeta, input.plasma_info, $
-	  *magcoord.lam, ElecTherm=ElecTherm, ElecEner=ElecEner, IonTherm=IonTherm
-	dotherm = 1 & doener = 1
-	end
+        JupiterPlasma, loc, *magcoord.M, *magcoord.zeta, input.plasma_info, $
+          *magcoord.lam, ElecTherm=ElecTherm, ElecEner=ElecEner, IonTherm=IonTherm
+        dotherm = 1 & doener = 1
+	    end
       'Saturn': begin
-	SaturnPlasma, *magcoord.M, *magcoord.zeta, ElecTherm=ElecTherm, $
-	  IonTherm=IonTherm, ElecEner=ElecEner
-	dotherm = 1
-	doener = 0
-	end
+        SaturnPlasma, *magcoord.M, *magcoord.zeta, ElecTherm=ElecTherm, $
+          IonTherm=IonTherm, ElecEner=ElecEner
+        dotherm = 1
+        doener = 0
+	    end
       else: stop
     endcase
 
